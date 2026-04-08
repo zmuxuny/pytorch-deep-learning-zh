@@ -233,3 +233,27 @@
 		- `579c360` 仅包含 `08_pytorch_paper_replicating.ipynb`
 		- `ab21030` 仅包含 `09_pytorch_model_deployment.ipynb`
 - 下一轮起点：继续主线终轮复核（重点评估 08/09 的英文公式原文引用与图片 alt 文案是否需要进一步本地化）。
+
+## 21) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续主线终轮复核，补齐 02/08/09 的导航与图片 `alt` 可见英文文案本地化。
+- 本轮实际改动文件：02_pytorch_classification.ipynb、08_pytorch_paper_replicating.ipynb、09_pytorch_model_deployment.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（00-09）：
+	- 02：顶部导航文案（View Source/Slides）与图片 `alt` 文案已本地化；引导语 `"Visualize, visualize, visualize!"` 已本地化。
+	- 08：顶部导航文案与关键英文 `alt` 文案（PatchEmbedding summary）已本地化。
+	- 09：顶部导航文案与多处图片 `alt` 文案已本地化（部署流程图、Gradio 工作流、实验对比等）。
+- 扩展状态（docs/extras/video）：冻结（本轮无新增改动）。
+- 验收结果：
+	- 02/08/09 Notebook 错误检查：No errors found。
+	- 严格英文注释扫描：02=0、08=0、09=0。
+	- 主线复扫（严格口径，markdown 仅启发式统计）：
+		- 00/03/04/06/07：`code_comment=0, markdown=0`
+		- 01：`code_comment=0, markdown=2`（HTML 代码片段）
+		- 02：`code_comment=0, markdown=2`（公式/代码片段）
+		- 08：`code_comment=0, markdown=21`（以论文原文引用与公式为主）
+		- 09：`code_comment=0, markdown=2`（命令示例）
+	- 原子提交范围校验：
+		- `465763f` 仅包含 `02_pytorch_classification.ipynb`
+		- `c2fb478` 仅包含 `08_pytorch_paper_replicating.ipynb`
+		- `a10aed3` 仅包含 `09_pytorch_model_deployment.ipynb`
+- 下一轮起点：若继续主线“全中文正文”口径，优先处理 08 中论文英文引用段（保留公式原文）。
