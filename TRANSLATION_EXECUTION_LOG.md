@@ -105,7 +105,26 @@
 5. 严禁一次性大提交；若目标范围超过 2 个文件，必须拆分为多个原子提交。
 6. 在未显式确认前，不推送远端；默认只做本地可审计提交。
 
-## 11) 下一次提交计划（待执行）
-1. Commit A（主线 05）：仅包含 05_pytorch_going_modular.md 的一致性收敛。
-2. Commit B（主线 02）：仅包含 02_pytorch_classification.ipynb 的长尾清理。
-3. Commit C（日志）：仅包含 TRANSLATION_EXECUTION_LOG.md 的阶段记录更新。
+## 11) 下一次提交计划（执行状态）
+1. Commit A（主线 05）：已完成。
+	- 提交：`99597f4`
+	- 范围：仅 `05_pytorch_going_modular.md`
+2. Commit B（主线 02）：已完成。
+	- 提交：`fd5810a`
+	- 范围：仅 `02_pytorch_classification.ipynb`
+3. Commit C（日志）：执行中（本次更新）。
+
+## 12) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：按版本管理约定完成主线 05 与 02 的原子提交，并补齐日志提交。
+- 本轮实际改动文件：05_pytorch_going_modular.md、02_pytorch_classification.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（00-09）：
+	- 05：完成术语与注释一致性收敛（剩余英文界面文案/图片 alt 文本已本地化）。
+	- 02：完成练习区代码块英文注释长尾清理与文案排版修复（仅文本层变更）。
+- 扩展状态（docs/extras/video）：冻结（本轮无新增改动）。
+- 验收结果：
+	- 05 源内容级英文正文扫描（排除代码块）：残留计数 0。
+	- 02 Notebook 错误检查：No errors found。
+	- 02 严格英文注释扫描：仅保留 1 行注释掉的参数续行（`#                y_train)`）。
+	- 原子提交范围校验：A/B 两次 `git show --name-only -1` 均为单文件。
+- 下一轮起点：继续根目录其余章节一致性复核（优先 00/01/03 的尾项扫描），保持“单目标单提交”。
