@@ -364,3 +364,28 @@
 		- `25d261c` 仅包含 `docs/00_pytorch_fundamentals.ipynb`
 		- `e9badbc` 仅包含 `docs/05_pytorch_going_modular.md`
 - 下一轮起点：继续 docs 同步高体量章节（docs/08 与 docs/09），优先“导航/alt/注释键名”再逐步推进正文。
+
+## 28) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：把 docs 主线镜像和 workflow 会发布的 extras 页面一次性对齐，并处理 profiling 旁支的中文版本统一。
+- 本轮实际改动文件：docs/00_pytorch_fundamentals.ipynb、docs/01_pytorch_workflow.ipynb、docs/02_pytorch_classification.ipynb、docs/03_pytorch_computer_vision.ipynb、docs/04_pytorch_custom_datasets.ipynb、docs/05_pytorch_going_modular.md、docs/06_pytorch_transfer_learning.ipynb、docs/07_pytorch_experiment_tracking.ipynb、docs/08_pytorch_paper_replicating.ipynb、docs/09_pytorch_model_deployment.ipynb、docs/08_pytorch_profiling.ipynb、docs/pytorch_2_intro.ipynb、docs/pytorch_extra_resources.md、docs/pytorch_cheatsheet.ipynb、docs/pytorch_most_common_errors.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/00-09 已与根目录对应源文件对齐。
+- 扩展状态（docs/extras/video）：
+	- workflow 会发布的 extras 页面已写入 docs。
+	- `docs/08_pytorch_profiling.ipynb` 已与 `docs/10_pytorch_profiling.ipynb` 对齐为中文版。
+- 验收结果：
+	- 主线 00-09 与根目录文件级比对通过。
+	- workflow 发布的 extras 页面文件级比对通过。
+- 下一轮起点：继续 extras 深度汉化（`extras/pytorch_2_intro.ipynb`、`extras/exercises/`、`extras/solutions/`），再进入 `video_notebooks/` 与剩余发布收尾。
+
+## 29) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：按目录分批提交当前已完成的翻译内容，并把执行计划/入口文档同步收尾。
+- 本轮实际改动文件：README.md、SETUP.md、docs/index.md、TRANSLATION_PLAN_ROOT_NOTEBOOKS.md、extras/00_pytorch_fundamentals.md、extras/pytorch_2_results/README.md、extras/pytorch_cheatsheet.ipynb、extras/pytorch_extra_resources.md、extras/exercises/README.md、extras/solutions/README.md、docs/00_pytorch_fundamentals.ipynb、docs/01_pytorch_workflow.ipynb、docs/02_pytorch_classification.ipynb、docs/03_pytorch_computer_vision.ipynb、docs/04_pytorch_custom_datasets.ipynb、docs/05_pytorch_going_modular.md、docs/06_pytorch_transfer_learning.ipynb、docs/07_pytorch_experiment_tracking.ipynb、docs/08_pytorch_paper_replicating.ipynb、docs/09_pytorch_model_deployment.ipynb、docs/08_pytorch_profiling.ipynb、docs/10_pytorch_profiling.ipynb、extras/exercises/00_pytorch_fundamentals_exercises.ipynb、extras/exercises/01_pytorch_workflow_exercises.ipynb、extras/exercises/02_pytorch_classification_exercises.ipynb、extras/exercises/03_pytorch_computer_vision_exercises.ipynb、extras/exercises/04_pytorch_custom_datasets_exercises.ipynb、extras/exercises/05_pytorch_going_modular_exercise_template.ipynb、extras/exercises/06_pytorch_transfer_learning_exercises.ipynb、extras/exercises/07_pytorch_experiment_tracking_exercise_template.ipynb、extras/exercises/08_pytorch_paper_replicating_exercises.ipynb、extras/exercises/09_pytorch_model_deployment_exercises.ipynb、extras/solutions/00_pytorch_fundamentals_exercise_solutions.ipynb、extras/solutions/01_pytorch_workflow_exercise_solutions.ipynb、extras/solutions/02_pytorch_classification_exercise_solutions.ipynb、extras/solutions/03_pytorch_computer_vision_exercise_solutions.ipynb、extras/solutions/04_pytorch_custom_datasets_exercise_solutions.ipynb、extras/solutions/05_pytorch_going_modular_exercise_solutions.ipynb、extras/solutions/06_pytorch_transfer_learning_exercise_solutions.ipynb、extras/solutions/07_pytorch_experiment_tracking_exercise_solutions.ipynb、extras/solutions/08_pytorch_paper_replicating_exercise_solutions.ipynb、extras/solutions/09_pytorch_model_deployment_exercise_solutions.ipynb、video_notebooks/00_pytorch_fundamentals_video.ipynb、video_notebooks/01_pytorch_workflow_video.ipynb、video_notebooks/02_pytorch_classification_video.ipynb、video_notebooks/03_pytorch_computer_vision_video.ipynb
+- 主线状态（00-09）：根目录主线与 docs 镜像已完成本轮分批收口并保持一致。
+- 扩展状态（docs/extras/video）：extras 说明页、练习/解答、视频 notebook 已完成原子提交；PyTorch 2 结果说明页已单独提交。
+- 验收结果：
+	- 近期提交已通过 `git show --name-only` 抽查，范围均符合“单目标/少文件”原则。
+	- 当前工作区仅剩 3 类未处理项：`docs/pytorch_2_intro.ipynb`、`docs/pytorch_most_common_errors.ipynb`、`.github/copilot-instructions.md`。
+- 下一轮起点：继续翻译并收敛 `docs/pytorch_2_intro.ipynb` 和 `docs/pytorch_most_common_errors.ipynb`，再决定是否处理 `.github/copilot-instructions.md`。
