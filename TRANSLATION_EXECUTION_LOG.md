@@ -310,3 +310,21 @@
 		- `4d80b40` 仅包含 `docs/01_pytorch_workflow.ipynb`
 		- `ec2328b` 仅包含 `docs/02_pytorch_classification.ipynb`
 - 下一轮起点：继续 docs 同步第二批（建议按 08/09 或 03/04 继续单文件原子推进）。
+
+## 25) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续 docs 同步第二批，完成 docs/03 与 docs/04 的注释和可见文案收尾。
+- 本轮实际改动文件：docs/03_pytorch_computer_vision.ipynb、docs/04_pytorch_custom_datasets.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/03：顶部导航与 Colab 按钮文案本地化；可视化口号本地化；英文注释尾项（调试打印/预测注释）已清理。
+	- docs/04：顶部导航与 Colab 按钮文案本地化；4 处图片 alt 文案本地化；英文注释尾项（DataLoader、调试打印、结果键名、自定义图像预测）已清理。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（本轮仅处理 docs/03、docs/04）。
+- 验收结果：
+	- docs/03 与 docs/04 Notebook 错误检查：No errors found。
+	- 严格残留复扫：
+		- docs/03：`code_comment=0, markdown=0`
+		- docs/04：`code_comment=0, markdown=0`
+	- 原子提交范围校验：
+		- `3adfc0f` 仅包含 `docs/03_pytorch_computer_vision.ipynb`
+		- `36fe2a1` 仅包含 `docs/04_pytorch_custom_datasets.ipynb`
+- 下一轮起点：继续 docs 同步第三批（建议按 docs/08、docs/09 或 docs/06、docs/07 逐文件推进）。
