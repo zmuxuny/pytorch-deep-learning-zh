@@ -213,3 +213,23 @@
 1. 主线根目录尾项清理：已基本完成（00-09 中本轮已收敛到 07）。
 2. 仍需工作：主线终轮复核 + 最后一轮日志归档。
 3. 预计完成：约 30-60 分钟（按当前节奏、无结构异常前提）。
+
+## 20) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续主线终轮复核，清理 02/04/07/08/09 的英文起始注释残留并保持原子提交。
+- 本轮实际改动文件：02_pytorch_classification.ipynb、04_pytorch_custom_datasets.ipynb、07_pytorch_experiment_tracking.ipynb、08_pytorch_paper_replicating.ipynb、09_pytorch_model_deployment.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（00-09）：
+	- 02：注释掉的续行与示例层注释已改为中文起始。
+	- 04：`Create DataLoader's` 注释已本地化。
+	- 07/08/09：`input_size/col_names/row_settings/col_width` 等摘要注释键名已本地化为中文起始。
+- 扩展状态（docs/extras/video）：冻结（本轮无新增改动）。
+- 验收结果：
+	- 02/04/07/08/09 Notebook 错误检查：No errors found。
+	- 严格英文注释扫描：02=0、04=0、07=0、08=0、09=0。
+	- 原子提交范围校验：
+		- `8d74174` 仅包含 `02_pytorch_classification.ipynb`
+		- `11df448` 仅包含 `04_pytorch_custom_datasets.ipynb`
+		- `a0f6708` 仅包含 `07_pytorch_experiment_tracking.ipynb`
+		- `579c360` 仅包含 `08_pytorch_paper_replicating.ipynb`
+		- `ab21030` 仅包含 `09_pytorch_model_deployment.ipynb`
+- 下一轮起点：继续主线终轮复核（重点评估 08/09 的英文公式原文引用与图片 alt 文案是否需要进一步本地化）。
