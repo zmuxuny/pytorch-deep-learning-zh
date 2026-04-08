@@ -328,3 +328,21 @@
 		- `3adfc0f` 仅包含 `docs/03_pytorch_computer_vision.ipynb`
 		- `36fe2a1` 仅包含 `docs/04_pytorch_custom_datasets.ipynb`
 - 下一轮起点：继续 docs 同步第三批（建议按 docs/08、docs/09 或 docs/06、docs/07 逐文件推进）。
+
+## 26) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续 docs 同步第三批，完成 docs/06 与 docs/07 的注释和可见文案收尾。
+- 本轮实际改动文件：docs/06_pytorch_transfer_learning.ipynb、docs/07_pytorch_experiment_tracking.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/06：顶部导航与 Colab 按钮文案本地化；多处图片 alt 文案本地化；迁移学习英文引用句本地化；`normalize` 示例行添加中文引导。
+	- docs/07：顶部导航与 Colab 按钮文案本地化；实验口号统一为中文；workflow 图片 alt 本地化；summary 示例注释键名（列名/列宽/行设置）本地化；残留英文注释已清理。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（本轮仅处理 docs/06、docs/07）。
+- 验收结果：
+	- docs/06 与 docs/07 Notebook 错误检查：No errors found。
+	- 严格残留复扫：
+		- docs/06：`code_comment=0, markdown=0`
+		- docs/07：`code_comment=0, markdown=0`
+	- 原子提交范围校验：
+		- `bfe76b7` 仅包含 `docs/06_pytorch_transfer_learning.ipynb`
+		- `7dce518` 仅包含 `docs/07_pytorch_experiment_tracking.ipynb`
+- 下一轮起点：继续 docs 同步下一批（建议 docs/08 与 docs/09，保留公式原文口径）。
