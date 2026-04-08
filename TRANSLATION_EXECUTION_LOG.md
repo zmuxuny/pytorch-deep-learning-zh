@@ -141,3 +141,16 @@
 	- 00 英文正文扫描：仅剩 1 行代码示例赋值语句（`some_tensor = some_tensor.to(device)`，保留）。
 	- 原子提交范围校验：`bcb64b6` 仅包含 `00_pytorch_fundamentals.ipynb`。
 - 下一轮起点：继续根目录 01 与 03 的尾项扫描与单文件提交。
+
+## 14) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续主线复核，完成根目录 01 的英文尾项清理并原子提交。
+- 本轮实际改动文件：01_pytorch_workflow.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（00-09）：
+	- 01：完成英文注释尾项与英文资源标题尾项清理（仅文本层，不改训练逻辑）。
+- 扩展状态（docs/extras/video）：冻结（本轮无新增改动）。
+- 验收结果：
+	- 01 Notebook 错误检查：No errors found。
+	- 01 严格英文注释扫描：残留计数 0。
+	- 原子提交范围校验：`1984d6d` 仅包含 `01_pytorch_workflow.ipynb`。
+- 下一轮起点：继续根目录 03 的尾项扫描与单文件提交。
