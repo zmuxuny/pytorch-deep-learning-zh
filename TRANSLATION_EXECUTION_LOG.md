@@ -257,3 +257,22 @@
 		- `c2fb478` 仅包含 `08_pytorch_paper_replicating.ipynb`
 		- `a10aed3` 仅包含 `09_pytorch_model_deployment.ipynb`
 - 下一轮起点：若继续主线“全中文正文”口径，优先处理 08 中论文英文引用段（保留公式原文）。
+
+## 22) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续主线终轮复核，进一步清理 08 英文引文尾项并收敛 09 命令示例文案。
+- 本轮实际改动文件：08_pytorch_paper_replicating.ipynb、09_pytorch_model_deployment.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（00-09）：
+	- 08：新增完成多处英文引文本地化（Hybrid Architecture、class token、position embedding、MLP/Dropout、Training & Fine-tuning、ViT-L/16 资源说明等）；术语 bullet 已改为中文术语名。
+	- 09：两处 `git commit -m "first commit"` 命令示例前增加中文说明，命令本身保持不变。
+- 扩展状态（docs/extras/video）：冻结（本轮无新增改动）。
+- 验收结果：
+	- 08/09 Notebook 错误检查：No errors found。
+	- 严格英文注释扫描：08=0、09=0。
+	- markdown 启发式残留：
+		- 08：`markdown=9`（全部为 LaTeX/公式行，按约定保留）
+		- 09：`markdown=0`
+	- 原子提交范围校验：
+		- `1132b26` 仅包含 `08_pytorch_paper_replicating.ipynb`
+		- `02abb63` 仅包含 `09_pytorch_model_deployment.ipynb`
+- 下一轮起点：若继续主线收敛，可转向 01/02 的少量 HTML/公式片段口径统一，或进入 docs 同步阶段。
