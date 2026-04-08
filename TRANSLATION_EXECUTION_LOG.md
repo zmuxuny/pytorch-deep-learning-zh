@@ -128,3 +128,16 @@
 	- 02 严格英文注释扫描：仅保留 1 行注释掉的参数续行（`#                y_train)`）。
 	- 原子提交范围校验：A/B 两次 `git show --name-only -1` 均为单文件。
 - 下一轮起点：继续根目录其余章节一致性复核（优先 00/01/03 的尾项扫描），保持“单目标单提交”。
+
+## 13) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续主线复核，完成根目录 00 的英文文案尾项清理并原子提交。
+- 本轮实际改动文件：00_pytorch_fundamentals.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（00-09）：
+	- 00：完成英文界面文案与说明尾项清理（Colab 按钮 alt、NumPy/PyTorch 互转说明、随机性总结句）。
+- 扩展状态（docs/extras/video）：冻结（本轮无新增改动）。
+- 验收结果：
+	- 00 Notebook 错误检查：No errors found。
+	- 00 英文正文扫描：仅剩 1 行代码示例赋值语句（`some_tensor = some_tensor.to(device)`，保留）。
+	- 原子提交范围校验：`bcb64b6` 仅包含 `00_pytorch_fundamentals.ipynb`。
+- 下一轮起点：继续根目录 01 与 03 的尾项扫描与单文件提交。
