@@ -346,3 +346,21 @@
 		- `bfe76b7` 仅包含 `docs/06_pytorch_transfer_learning.ipynb`
 		- `7dce518` 仅包含 `docs/07_pytorch_experiment_tracking.ipynb`
 - 下一轮起点：继续 docs 同步下一批（建议 docs/08 与 docs/09，保留公式原文口径）。
+
+## 27) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续 docs 同步下一批，先完成低风险可收敛项（docs/00 与 docs/05）。
+- 本轮实际改动文件：docs/00_pytorch_fundamentals.ipynb、docs/05_pytorch_going_modular.md、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/00：Colab 按钮文案本地化；NumPy/PyTorch 互转说明行本地化；随机数迭代引导语本地化。
+	- docs/05：顶部导航文案（View Source/Slides）本地化；4 处英文图片 alt 文案本地化。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（本轮仅处理 docs/00、docs/05）。
+- 验收结果：
+	- docs/00 与 docs/05 错误检查：No errors found。
+	- 严格残留复扫：
+		- docs/00：`code_comment=0, markdown=0`
+		- docs/05：`markdown=0`
+	- 原子提交范围校验：
+		- `25d261c` 仅包含 `docs/00_pytorch_fundamentals.ipynb`
+		- `e9badbc` 仅包含 `docs/05_pytorch_going_modular.md`
+- 下一轮起点：继续 docs 同步高体量章节（docs/08 与 docs/09），优先“导航/alt/注释键名”再逐步推进正文。
