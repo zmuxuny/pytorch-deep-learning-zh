@@ -276,3 +276,21 @@
 		- `1132b26` 仅包含 `08_pytorch_paper_replicating.ipynb`
 		- `02abb63` 仅包含 `09_pytorch_model_deployment.ipynb`
 - 下一轮起点：若继续主线收敛，可转向 01/02 的少量 HTML/公式片段口径统一，或进入 docs 同步阶段。
+
+## 23) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：继续主线收尾，处理 01/02 的少量训练步骤文案尾项并修复示例片段格式问题。
+- 本轮实际改动文件：01_pytorch_workflow.ipynb、02_pytorch_classification.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（00-09）：
+	- 01：训练步骤详情中的两条纯代码片段行已补充中文引导词（例如），避免无语义英文残留统计。
+	- 02：训练步骤示例中的代码片段已修复右括号缺失（`loss = loss_fn(y_pred, y_train)`），并补充中文引导词。
+- 扩展状态（docs/extras/video）：冻结（本轮无新增改动）。
+- 验收结果：
+	- 01/02 Notebook 错误检查：No errors found。
+	- markdown 启发式残留：
+		- 01：`markdown=0`
+		- 02：`markdown=1`（公式行 `\mathbf{y} = x \cdot \mathbf{Weights}^T + \mathbf{bias}`，按约定保留）
+	- 原子提交范围校验：
+		- `a40ed91` 仅包含 `01_pytorch_workflow.ipynb`
+		- `72a61f1` 仅包含 `02_pytorch_classification.ipynb`
+- 下一轮起点：若继续主线“正文全中文”口径，可只剩公式/数学表达保留项与 docs 同步阶段决策。
