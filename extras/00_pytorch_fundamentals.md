@@ -2,75 +2,75 @@
 
 [View Source Code](https://github.com/mrdbourke/pytorch-deep-learning/blob/main/00_pytorch_fundamentals.ipynb) | [View Slides](https://github.com/mrdbourke/pytorch-deep-learning/blob/main/slides/00_pytorch_and_deep_learning_fundamentals.pdf) | [Watch Video Walkthrough](https://youtu.be/Z_ikDlimN6A?t=76) 
 
-# 00. PyTorch Fundamentals
+# 00. PyTorch 基础
 
-## What is PyTorch?
+## 什么是 PyTorch？
 
-[PyTorch](https://pytorch.org/) is an open source machine learning and deep learning framework.
+[PyTorch](https://pytorch.org/) 是一个开源的机器学习与深度学习框架。
 
-## What can PyTorch be used for?
+## PyTorch 可以用来做什么？
 
-PyTorch allows you to manipulate and process data and write machine learning algorithms using Python code.
+PyTorch 让你可以用 Python 操作和处理数据，并实现机器学习算法。
 
-## Who uses PyTorch?
+## 谁在使用 PyTorch？
 
-Many of the worlds largest technology companies such as [Meta (Facebook)](https://ai.facebook.com/blog/pytorch-builds-the-future-of-ai-and-machine-learning-at-facebook/), Tesla and Microsoft as well as artificial intelligence research companies such as [OpenAI use PyTorch](https://openai.com/blog/openai-pytorch/) to power research and bring machine learning to their products.
+全球很多顶级科技公司都在使用 PyTorch，例如 [Meta (Facebook)](https://ai.facebook.com/blog/pytorch-builds-the-future-of-ai-and-machine-learning-at-facebook/)、Tesla、Microsoft，以及像 [OpenAI](https://openai.com/blog/openai-pytorch/) 这样的 AI 研究机构，都用它推动研究并将机器学习落地到产品中。
 
 ![pytorch being used across industry and research](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00-pytorch-being-used-across-research-and-industry.png)
 
-For example, Andrej Karpathy (head of AI at Tesla) has given several talks ([PyTorch DevCon 2019](https://youtu.be/oBklltKXtDE), [Tesla AI Day 2021](https://youtu.be/j0z4FweCy4M?t=2904)) about how Tesla use PyTorch to power their self-driving computer vision models.
+例如，Tesla 的 AI 负责人 Andrej Karpathy 在多个演讲中（[PyTorch DevCon 2019](https://youtu.be/oBklltKXtDE)、[Tesla AI Day 2021](https://youtu.be/j0z4FweCy4M?t=2904)）分享过 Tesla 如何用 PyTorch 驱动自动驾驶视觉模型。
 
-PyTorch is also used in other industries such as agriculture to [power computer vision on tractors](https://medium.com/pytorch/ai-for-ag-production-machine-learning-for-agriculture-e8cfdb9849a1).
+PyTorch 也在农业等行业中落地，例如用于 [拖拉机上的计算机视觉系统](https://medium.com/pytorch/ai-for-ag-production-machine-learning-for-agriculture-e8cfdb9849a1)。
 
-## Why use PyTorch?
+## 为什么使用 PyTorch？
 
-Machine learning researchers love using PyTorch. And as of February 2022, PyTorch is the [most used deep learning framework on Papers With Code](https://paperswithcode.com/trends), a website for tracking machine learning research papers and the code repositories attached with them.
+机器学习研究者非常偏爱 PyTorch。截止 2022 年 2 月，PyTorch 是 [Papers With Code 上使用最广的深度学习框架](https://paperswithcode.com/trends)（Papers With Code 是一个追踪研究论文及其代码仓库的网站）。
 
-PyTorch also helps take care of many things such as GPU acceleration (making your code run faster) behind the scenes. 
+PyTorch 还在底层帮你处理了很多事情，例如 GPU 加速（让代码运行更快）。
 
-So you can focus on manipulating data and writing algorithms and PyTorch will make sure it runs fast.
+因此你可以更专注在数据处理与算法实现，性能层面的很多工作交给 PyTorch。
 
-And if companies such as Tesla and Meta (Facebook) use it to build models they deploy to power hundreds of applications, drive thousands of cars and deliver content to billions of people, it's clearly capable on the development front too.
+再考虑到 Tesla、Meta（Facebook）等公司用它构建并部署模型，服务海量应用、车辆与用户，也说明它在工程与生产层面同样很可靠。
 
-## What we're going to cover in this module
+## 本章将涵盖什么
 
-This course is broken down into different sections (notebooks). 
+本课程由多个章节（notebook）组成。
 
-Each notebook covers important ideas and concepts within PyTorch.
+每个 notebook 都聚焦 PyTorch 中的重要概念与实践。
 
-Subsequent notebooks build upon knowledge from the previous one (numbering starts at 00, 01, 02 and goes to whatever it ends up going to).
+后续章节会建立在前一章基础上（编号从 00、01、02 持续递进）。
 
-This notebook deals with the basic building block of machine learning and deep learning, the tensor.
+本 notebook 讲解机器学习与深度学习最基础的构件：张量（tensor）。
 
-Specifically, we're going to cover:
+具体会覆盖以下内容：
 
-| **Topic** | **Contents** |
-| ----- | ----- |
-| **Introduction to tensors** | Tensors are the basic building block of all of machine learning and deep learning. |
-| **Creating tensors** | Tensors can represent almost any kind of data (images, words, tables of numbers). |
-| **Getting information from tensors** | If you can put information into a tensor, you'll want to get it out too. |
-| **Manipulating tensors** | Machine learning algorithms (like neural networks) involve manipulating tensors in many different ways such as adding, multiplying, combining. | 
-| **Dealing with tensor shapes** | One of the most common issues in machine learning is dealing with shape mismatches (trying to mixed wrong shaped tensors with other tensors). |
-| **Indexing on tensors** | If you've indexed on a Python list or NumPy array, it's very similar with tensors, except they can have far more dimensions. |
-| **Mixing PyTorch tensors and NumPy** | PyTorch plays with tensors ([`torch.Tensor`](https://pytorch.org/docs/stable/tensors.html)), NumPy likes arrays ([`np.ndarray`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html)) sometimes you'll want to mix and match these. | 
-| **Reproducibility** | Machine learning is very experimental and since it uses a lot of *randomness* to work, sometimes you'll want that *randomness* to not be so random. |
-| **Running tensors on GPU** | GPUs (Graphics Processing Units) make your code faster, PyTorch makes it easy to run your code on GPUs. |
+| **主题**                      | **内容**                                                                                                                                                                                                          |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **张量入门**                  | 张量是整个机器学习与深度学习的基础构建块。                                                                                                                                                                        |
+| **创建张量**                  | 张量可以表示几乎任何类型的数据（图像、文本、数值表格等）。                                                                                                                                                        |
+| **从张量中获取信息**          | 既然信息可以放进张量，就要学会把信息取出来。                                                                                                                                                                      |
+| **张量操作**                  | 机器学习算法（如神经网络）会大量进行加法、乘法、拼接等张量运算。                                                                                                                                                  |
+| **处理张量形状**              | 机器学习中最常见的问题之一是形状不匹配（把不兼容形状的张量混用）。                                                                                                                                                |
+| **张量索引**                  | 如果你用过 Python 列表或 NumPy 数组索引，张量很类似，只是维度往往更多。                                                                                                                                           |
+| **PyTorch 张量与 NumPy 混用** | PyTorch 使用张量（[`torch.Tensor`](https://pytorch.org/docs/stable/tensors.html)），NumPy 使用数组（[`np.ndarray`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html)），实际项目中常需要互转。 |
+| **可复现性**                  | 机器学习依赖大量随机性，因此很多时候你会希望“随机”变得可控。                                                                                                                                                      |
+| **在 GPU 上运行张量**         | GPU（图形处理器）能显著加速代码，PyTorch 让 GPU 运行变得简单。                                                                                                                                                    |
 
-## Where can can you get help?
+## 遇到问题去哪里求助？
 
-All of the materials for this course [live on GitHub](https://github.com/mrdbourke/pytorch-deep-learning).
+本课程所有材料都在 [GitHub](https://github.com/mrdbourke/pytorch-deep-learning) 上。
 
-And if you run into trouble, you can ask a question on the [Discussions page](https://github.com/mrdbourke/pytorch-deep-learning/discussions) there too.
+如果你遇到问题，也可以在仓库的 [Discussions 页面](https://github.com/mrdbourke/pytorch-deep-learning/discussions) 提问。
 
-There's also the [PyTorch developer forums](https://discuss.pytorch.org/), a very helpful place for all things PyTorch. 
+另外还有 [PyTorch 开发者论坛](https://discuss.pytorch.org/)，这是获取 PyTorch 相关帮助的优质社区。
 
-## Importing PyTorch
+## 导入 PyTorch
 
-> **Note:** Before running any of the code in this notebook, you should have gone through the [PyTorch setup steps](https://pytorch.org/get-started/locally/). 
+> **注意：** 在运行本 notebook 任何代码前，你应先完成 [PyTorch 安装配置步骤](https://pytorch.org/get-started/locally/)。
 >
-> However, **if you're running on Google Colab**, everything should work (Google Colab comes with PyTorch and other libraries installed).
+> 但如果你使用 **Google Colab**，一般可直接运行（Colab 已预装 PyTorch 与常用库）。
 
-Let's start by importing PyTorch and checking the version we're using.
+先导入 PyTorch，并查看当前版本。
 
 
 ```python
@@ -85,44 +85,44 @@ torch.__version__
 
 
 
-Wonderful, it looks like we've got PyTorch 1.10.0+. 
+很好，看起来我们当前是 PyTorch 1.10.0+。
 
-This means if you're going through these materials, you'll see most compatability with PyTorch 1.10.0+, however if your version number is far higher than that, you might notice some inconsistencies. 
+这意味着课程材料通常与 PyTorch 1.10.0+ 兼容；如果你本地版本明显更高，可能会遇到少量不一致。
 
-And if you do have any issues, please post on the course [GitHub Discussions page](https://github.com/mrdbourke/pytorch-deep-learning/discussions).
+如果遇到问题，请到课程的 [GitHub Discussions 页面](https://github.com/mrdbourke/pytorch-deep-learning/discussions) 反馈。
 
-## Introduction to tensors 
+## 张量入门
 
-Now we've got PyTorch imported, it's time to learn about tensors.
+现在 PyTorch 已导入，接下来学习张量。
 
-Tensors are the fundamental building block of machine learning.
+张量是机器学习中的核心基础构件。
 
-Their job is to represent data in a numerical way.
+它的作用是以数值形式表示数据。
 
-For example, you could represent an image as a tensor with shape `[3, 224, 224]` which would mean `[colour_channels, height, width]`, as in the image has `3` colour channels (red, green, blue), a height of `224` pixels and a width of `224` pixels.
+例如，一张图像可表示为形状 `[3, 224, 224]` 的张量，对应 `[colour_channels, height, width]`：即图像有 `3` 个颜色通道（红、绿、蓝），高度 `224` 像素，宽度 `224` 像素。
 
 ![example of going from an input image to a tensor representation of the image, image gets broken down into 3 colour channels as well as numbers to represent the height and width](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00-tensor-shape-example-of-image.png)
 
-In tensor-speak (the language used to describe tensors), the tensor would have three dimensions, one for `colour_channels`, `height` and `width`.
+在张量术语中，这个张量有三个维度，分别对应 `colour_channels`、`height` 与 `width`。
 
-But we're getting ahead of ourselves.
+不过先别着急。
 
-Let's learn more about tensors by coding them.
+我们通过实际编码来继续理解张量。
 
 
-### Creating tensors 
+### 创建张量
 
-PyTorch loves tensors. So much so there's a whole documentation page dedicated to the [`torch.Tensor`](https://pytorch.org/docs/stable/tensors.html) class.
+PyTorch 的核心就是张量，官方甚至专门为 [`torch.Tensor`](https://pytorch.org/docs/stable/tensors.html) 类准备了完整文档页面。
 
-Your first piece of homework is to [read through the documentation on `torch.Tensor`](https://pytorch.org/docs/stable/tensors.html) for 10-minutes. But you can get to that later.
+你的第一个小作业是花 10 分钟浏览 [`torch.Tensor` 文档](https://pytorch.org/docs/stable/tensors.html)。当然可以稍后再做。
 
-Let's code.
+先上代码。
 
-The first thing we're going to create is a **scalar**.
+我们先创建一个 **scalar（标量）**。
 
-A scalar is a single number and in tensor-speak it's a zero dimension tensor.
+标量就是单个数字，在张量语境里是 0 维张量。
 
-> **Note:** That's a trend for this course. We'll focus on writing specific code. But often I'll set exercises which involve reading and getting familiar with the PyTorch documentation. Because after all, once you're finished this course, you'll no doubt want to learn more. And the documentation is somewhere you'll be finding yourself quite often.
+> **注意：** 这也是本课程的一贯风格。我们会大量实操代码，同时也会安排你阅读 PyTorch 文档来熟悉官方资料。课程结束后你一定还会继续深入，而文档会是你最常访问的学习资源之一。
 
 
 ```python
@@ -138,11 +138,11 @@ scalar
 
 
 
-See how the above printed out `tensor(7)`?
+看到上面输出了 `tensor(7)` 吗？
 
-That means although `scalar` is a single number, it's of type `torch.Tensor`.
+这说明 `scalar` 虽然是一个数字，但它的数据类型依然是 `torch.Tensor`。
 
-We can check the dimensions of a tensor using the `ndim` attribute.
+我们可以通过 `ndim` 属性查看张量维度数。
 
 
 ```python
@@ -156,11 +156,11 @@ scalar.ndim
 
 
 
-What if we wanted to retrieve the number from the tensor?
+如果我们想把张量里的数字取出来呢？
 
-As in, turn it from `torch.Tensor` to a Python integer?
+也就是把它从 `torch.Tensor` 转成 Python 整数？
 
-To do we can use the `item()` method.
+可以使用 `item()` 方法。
 
 
 ```python
@@ -175,13 +175,13 @@ scalar.item()
 
 
 
-Okay, now let's see a **vector**.
+接下来看看 **vector（向量）**。
 
-A vector is a single dimension tensor but can contain many numbers.
+向量是 1 维张量，但可以包含多个数字。
 
-As in, you could have a vector `[3, 2]` to describe `[bedrooms, bathrooms]` in your house. Or you could have `[3, 2, 2]` to describe `[bedrooms, bathrooms, car_parks]` in your house.
+比如你可以用 `[3, 2]` 表示房子的 `[bedrooms, bathrooms]`，也可以用 `[3, 2, 2]` 表示 `[bedrooms, bathrooms, car_parks]`。
 
-The important trend here is that a vector is flexible in what it can represent (the same with tensors).
+关键点是：向量（以及更一般的张量）对“表示什么数据”非常灵活。
 
 
 ```python
@@ -197,9 +197,9 @@ vector
 
 
 
-Wonderful, `vector` now contains two 7's, my favourite number.
+很好，`vector` 现在包含两个 7（我最喜欢的数字）。
 
-How many dimensions do you think it'll have?
+你觉得它有几维？
 
 
 ```python
@@ -214,17 +214,17 @@ vector.ndim
 
 
 
-Hmm, that's strange, `vector` contains two numbers but only has a single dimension.
+看起来有点反直觉：`vector` 里有两个数，但只有 1 个维度。
 
-I'll let you in on a trick.
+这里有个小技巧。
 
-You can tell the number of dimensions a tensor in PyTorch has by the number of square brackets on the outside (`[`) and you only need to count one side.
+在 PyTorch 里，你可以通过最外层方括号（`[`) 的层数来判断张量维度，只看一侧即可。
 
-How many square brackets does `vector` have?
+`vector` 最外层有几层方括号？
 
-Another important concept for tensors is their `shape` attribute. The shape tells you how the elements inside them are arranged.
+张量另一个重要概念是 `shape` 属性，它告诉你内部元素是如何组织的。
 
-Let's check out the shape of `vector`.
+我们来看下 `vector` 的形状。
 
 
 ```python
@@ -239,9 +239,9 @@ vector.shape
 
 
 
-The above returns `torch.Size([2])` which means our vector has a shape of `[2]`. This is because of the two elements we placed inside the square brackets (`[7, 7]`).
+上面返回 `torch.Size([2])`，表示向量形状为 `[2]`。原因很直接：我们在方括号里放了两个元素（`[7, 7]`）。
 
-Let's now see a **matrix**.
+接下来看看 **matrix（矩阵）**。
 
 
 ```python
@@ -259,7 +259,7 @@ MATRIX
 
 
 
-Wow! More numbers! Matrices are as flexible as vectors, except they've got an extra dimension.
+数字更多了。矩阵和向量一样灵活，只是它多了一个维度。
 
 
 
@@ -276,9 +276,9 @@ MATRIX.ndim
 
 
 
-`MATRIX` has two dimensions (did you count the number of square brakcets on the outside of one side?).
+`MATRIX` 有两个维度（你有数最外层方括号的层数吗？）。
 
-What `shape` do you think it will have?
+你觉得它的 `shape` 会是什么？
 
 
 ```python
@@ -292,9 +292,9 @@ MATRIX.shape
 
 
 
-We get the output `torch.Size([2, 2])` because `MATRIX` is two elements deep and two elements wide.
+输出是 `torch.Size([2, 2])`，因为 `MATRIX` 的“深度”为 2，“宽度”也为 2。
 
-How about we create a **tensor**?
+接着创建一个 **tensor（张量）** 怎么样？
 
 
 ```python
@@ -314,15 +314,15 @@ TENSOR
 
 
 
-Woah! What a nice looking tensor.
+这个张量看起来很不错。
 
-I want to stress that tensors can represent almost anything. 
+我想强调：张量几乎可以表示任何类型的数据。
 
-The one we just created could be the sales numbers for a steak and almond butter store (two of my favourite foods).
+我们刚创建的这个张量，甚至可以表示一家牛排和杏仁酱商店的销售数据（这两样都是我爱吃的）。
 
 ![a simple tensor in google sheets showing day of week, steak sales and almond butter sales](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00_simple_tensor.png)
 
-How many dimensions do you think it has? (hint: use the square bracket counting trick)
+你觉得它有几维？（提示：继续用“数方括号”技巧）
 
 
 ```python
@@ -337,7 +337,7 @@ TENSOR.ndim
 
 
 
-And what about its shape?
+那它的形状呢？
 
 
 ```python
@@ -352,50 +352,50 @@ TENSOR.shape
 
 
 
-Alright, it outputs `torch.Size([1, 3, 3])`.
+可以看到，输出为 `torch.Size([1, 3, 3])`。
 
-The dimensions go outer to inner.
+维度顺序是从外到内。
 
-That means there's 1 dimension of 3 by 3.
+也就是：有 1 组 `3 x 3` 的数据。
 
 ![example of different tensor dimensions](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00-pytorch-different-tensor-dimensions.png)
 
-> **Note:** You might've noticed me using lowercase letters for `scalar` and `vector` and uppercase letters for `MATRIX` and `TENSOR`. This was on purpose. In practice, you'll often see scalars and vectors denoted as lowercase letters such as `y` or `a`. And matrices and tensors denoted as uppercase letters such as `X` or `W`.
+> **注意：** 你可能发现我给 `scalar`、`vector` 用小写命名，而 `MATRIX`、`TENSOR` 用大写命名，这是有意为之。实际中，标量和向量常用小写字母表示（如 `y`、`a`），矩阵和张量常用大写字母表示（如 `X`、`W`）。
 >
-> You also might notice the names martrix and tensor used interchangably. This is common. Since in PyTorch you're often dealing with `torch.Tensor`'s (hence the tensor name), however, the shape and dimensions of what's inside will dictate what it actually is.
+> 你也会看到 matrix 与 tensor 在一些语境下被交替使用，这是常见现象。因为在 PyTorch 中我们统一使用 `torch.Tensor`，但具体是“标量/向量/矩阵/高维张量”，取决于内部数据的形状与维度。
 
-Let's summarise.
+做个小结。
 
-| Name | What is it? | Number of dimensions | Lower or upper (usually/example) |
-| ----- | ----- | ----- | ----- |
-| **scalar** | a single number | 0 | Lower (`a`) | 
-| **vector** | a number with direction (e.g. wind speed with direction) but can also have many other numbers | 1 | Lower (`y`) |
-| **matrix** | a 2-dimensional array of numbers | 2 | Upper (`Q`) |
-| **tensor** | an n-dimensional array of numbers | can be any number, a 0-dimension tensor is a scalar, a 1-dimension tensor is a vector | Upper (`X`) | 
+| 名称               | 它是什么                                         | 维度数量                               | 常见记号（小写/大写） |
+| ------------------ | ------------------------------------------------ | -------------------------------------- | --------------------- |
+| **scalar（标量）** | 单个数值                                         | 0                                      | 小写（如 `a`）        |
+| **vector（向量）** | 具有方向的一组数（如带方向的风速）或一般一维数列 | 1                                      | 小写（如 `y`）        |
+| **matrix（矩阵）** | 二维数值数组                                     | 2                                      | 大写（如 `Q`）        |
+| **tensor（张量）** | n 维数值数组                                     | 任意维；0 维张量是标量，1 维张量是向量 | 大写（如 `X`）        |
 
 ![scalar vector matrix tensor and what they look like](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00-scalar-vector-matrix-tensor.png)
 
-### Random tensors
+### 随机张量
 
-We've established tensors represent some form of data.
+前面我们已经知道，张量用于表示数据。
 
-And machine learning models such as neural networks manipulate and seek patterns within tensors.
+而像神经网络这样的机器学习模型，会在张量上做运算并寻找模式。
 
-But when building machine learning models with PyTorch, it's rare you'll create tenors by hand (like what we've being doing).
+但在真实建模里，你很少会像前面那样手动逐个写张量。
 
-Instead, a machine learning model often starts out with large random tensors of numbers and adjusts these random numbers as it works through data to better represent it.
+更常见的是：模型以随机初始化的大张量开始，随后在训练中不断调整这些数值，使其更好地表示数据模式。
 
-In essence:
+本质上就是：
 
-`Start with random numbers -> look at data -> update random numbers -> look at data -> update random numbers...`
+`随机初始化 -> 观察数据 -> 更新参数 -> 再观察数据 -> 再更新参数...`
 
-As a data scientist, you can define how the machine learning model starts (initialization), looks at data (representation) and updates (optimization) its random numbers.
+作为数据科学实践者，你可以决定模型如何初始化、如何表示数据、如何优化更新。
 
-We'll get hands on with these steps later on.
+这些步骤我们后面都会实操。
 
-For now, let's see how to create a tensor of random numbers.
+现在先看如何创建随机张量。
 
-We can do so using [`torch.rand()`](https://pytorch.org/docs/stable/generated/torch.rand.html) and passing in the `size` parameter.
+可以使用 [`torch.rand()`](https://pytorch.org/docs/stable/generated/torch.rand.html)，并通过 `size` 指定形状。
 
 
 ```python
@@ -414,9 +414,9 @@ random_tensor, random_tensor.dtype
 
 
 
-The flexibility of `torch.rand()` is that we can adjust the `size` to be whatever we want.
+`torch.rand()` 的优势在于 `size` 非常灵活，想要什么形状都可以。
 
-For example, say you wanted a random tensor in the common image shape of `[224, 224, 3]` (`[height, width, color_channels`]).
+例如，你可以创建图像常见形状 `[224, 224, 3]` 的随机张量（`[height, width, color_channels]`）。
 
 
 ```python
@@ -432,15 +432,15 @@ random_image_size_tensor.shape, random_image_size_tensor.ndim
 
 
 
-### Zeros and ones
+### 全 0 与全 1 张量
 
-Sometimes you'll just want to fill tensors with zeros or ones.
+有时候你只需要全 0 或全 1 的张量。
 
-This happens a lot with masking (like masking some of the values in one tensor with zeros to let a model know not to learn them).
+这种场景在掩码（masking）中很常见，比如把某些位置置 0，告诉模型这些位置不要学习。
 
-Let's create a tensor full of zeros with [`torch.zeros()`](https://pytorch.org/docs/stable/generated/torch.zeros.html)
+用 [`torch.zeros()`](https://pytorch.org/docs/stable/generated/torch.zeros.html) 创建全 0 张量。
 
-Again, the `size` parameter comes into play.
+同样通过 `size` 指定形状。
 
 
 ```python
@@ -459,7 +459,7 @@ zeros, zeros.dtype
 
 
 
-We can do the same to create a tensor of all ones except using [`torch.ones()` ](https://pytorch.org/docs/stable/generated/torch.ones.html) instead.
+创建全 1 张量时改用 [`torch.ones()`](https://pytorch.org/docs/stable/generated/torch.ones.html) 即可。
 
 
 ```python
@@ -478,18 +478,18 @@ ones, ones.dtype
 
 
 
-### Creating a range and tensors like
+### 创建数值区间与同形张量
 
-Sometimes you might want a range of numbers, such as 1 to 10 or 0 to 100.
+有时你需要一个数值区间，比如 1 到 10，或 0 到 100。
 
-You can use `torch.arange(start, end, step)` to do so.
+这时可以使用 `torch.arange(start, end, step)`。
 
-Where:
-* `start` = start of range (e.g. 0)
-* `end` = end of range (e.g. 10)
-* `step` = how many steps in between each value (e.g. 1)
+其中：
+* `start` = 起始值（如 0）
+* `end` = 结束值（如 10）
+* `step` = 步长（如 1）
 
-> **Note:** In Python, you can use `range()` to create a range. However in PyTorch, `torch.range()` is deprecated and may show an error in the future.
+> **注意：** 在 Python 里可用 `range()`。但在 PyTorch 中，`torch.range()` 已被弃用，未来可能报错。
 
 
 ```python
@@ -512,11 +512,11 @@ zero_to_ten
 
 
 
-Sometimes you might want one tensor of a certain type with the same shape as another tensor.
+有时你还需要“和已有张量形状一致”的新张量。
 
-For example, a tensor of all zeros with the same shape as a previous tensor. 
+比如创建一个与已有张量同形状的全 0 张量。
 
-To do so you can use [`torch.zeros_like(input)`](https://pytorch.org/docs/stable/generated/torch.zeros_like.html) or [`torch.ones_like(input)`](https://pytorch.org/docs/1.9.1/generated/torch.ones_like.html) which return a tensor filled with zeros or ones in the same shape as the `input` respectively.
+可以用 [`torch.zeros_like(input)`](https://pytorch.org/docs/stable/generated/torch.zeros_like.html) 或 [`torch.ones_like(input)`](https://pytorch.org/docs/1.9.1/generated/torch.ones_like.html)，它们会返回与 `input` 同形状的全 0 / 全 1 张量。
 
 
 ```python
@@ -532,43 +532,43 @@ ten_zeros
 
 
 
-### Tensor datatypes
+### 张量数据类型
 
-There are many different [tensor datatypes available in PyTorch](https://pytorch.org/docs/stable/tensors.html#data-types).
+PyTorch 提供了很多种 [张量数据类型](https://pytorch.org/docs/stable/tensors.html#data-types)。
 
-Some are specific for CPU and some are better for GPU.
+有些更常用于 CPU，有些更适合 GPU。
 
-Getting to know which is which can take some time.
+理解它们的区别需要一点时间。
 
-Generally if you see `torch.cuda` anywhere, the tensor is being used for GPU (since Nvidia GPUs use a computing toolkit called CUDA).
+一般看到 `torch.cuda`，就意味着相关张量/计算在 GPU 上执行（NVIDIA GPU 依赖 CUDA 生态）。
 
-The most common type (and generally the default) is `torch.float32` or `torch.float`.
+最常见（也通常是默认）的类型是 `torch.float32` 或 `torch.float`。
 
-This is referred to as "32-bit floating point".
+这被称为“32 位浮点数”。
 
-But there's also 16-bit floating point (`torch.float16` or `torch.half`) and 64-bit floating point (`torch.float64` or `torch.double`).
+此外还有 16 位浮点（`torch.float16` 或 `torch.half`）和 64 位浮点（`torch.float64` 或 `torch.double`）。
 
-And to confuse things even more there's also 8-bit, 16-bit, 32-bit and 64-bit integers.
+再加上 8/16/32/64 位整数类型，初看会更复杂。
 
-Plus more!
+而且还不止这些。
 
-> **Note:** An integer is a flat round number like `7` whereas a float has a decimal `7.0`.
+> **注意：** 整数如 `7`，浮点数如 `7.0`。
 
-The reason for all of these is to do with **precision in computing**.
+之所以有这么多类型，核心与**计算精度（precision）**有关。
 
-Precision is the amount of detail used to describe a number.
+精度可以理解为“描述一个数值时保留的信息细节量”。
 
-The higher the precision value (8, 16, 32), the more detail and hence data used to express a number.
+位宽越高，通常可表示细节越多，对应存储和计算代价也越高。
 
-This matters in deep learning and numerical computing because you're making so many operations, the more detail you have to calculate on, the more compute you have to use.
+在深度学习里，运算次数极多，精度选择会显著影响速度与资源消耗。
 
-So lower precision datatypes are generally faster to compute on but sacrifice some performance on evaluation metrics like accuracy (faster to compute but less accurate).
+所以低精度类型通常更快，但可能在准确率等指标上有一定损失。
 
-> **Resources:** 
-  * See the [PyTorch documentation for a list of all available tensor datatypes](https://pytorch.org/docs/stable/tensors.html#data-types).
-  * Read the [Wikipedia page for an overview of what precision in computing](https://en.wikipedia.org/wiki/Precision_(computer_science)) is.
+> **参考资源：**
+    * 查看 [PyTorch 数据类型文档](https://pytorch.org/docs/stable/tensors.html#data-types)。
+    * 阅读 [Wikipedia: Precision (computer science)](https://en.wikipedia.org/wiki/Precision_(computer_science)) 了解计算精度。
 
-Let's see how to create some tensors with specific datatypes. We can do so using the `dtype` parameter.
+下面演示如何通过 `dtype` 参数创建指定数据类型的张量。
 
 
 ```python
@@ -588,15 +588,15 @@ float_32_tensor.shape, float_32_tensor.dtype, float_32_tensor.device
 
 
 
-Aside from shape issues (tensor shapes don't match up), two of the other most common issues you'll come across in PyTorch are datatype and device issues.
+除了形状不匹配，PyTorch 里最常见的问题还包括数据类型不一致和设备不一致。
 
-For example, one of tensors is `torch.float32` and the other is `torch.float16` (PyTorch often likes tensors to be the same format).
+例如一个张量是 `torch.float32`，另一个是 `torch.float16`，很多运算会要求它们类型一致。
 
-Or one of your tensors is on the CPU and the other is on the GPU (PyTorch likes calculations between tensors to be on the same device).
+又或者一个张量在 CPU，另一个在 GPU，PyTorch 也通常要求参与同一运算的张量位于同一设备。
 
-We'll see more of this device talk later on.
+设备相关问题我们后面还会详细讲。
 
-For now let's create a tensor with `dtype=torch.float16`.
+现在先创建一个 `dtype=torch.float16` 的张量。
 
 
 ```python
@@ -613,16 +613,16 @@ float_16_tensor.dtype
 
 
 
-## Getting information from tensors
+## 从张量中获取信息
 
-Once you've created tensors (or someone else or a PyTorch module has created them for you), you might want to get some information from them.
+当你创建好张量（或由他人、模块创建好）后，通常需要查看它们的关键信息。
 
-We've seen these before but three of the most common attributes you'll want to find out about tensors are:
-* `shape` - what shape is the tensor? (some operations require specific shape rules)
-* `dtype` - what datatype are the elements within the tensor stored in?
-* `device` - what device is the tensor stored on? (usually GPU or CPU)
+我们前面已经接触过，其中最常用的三个属性是：
+* `shape` - 张量形状是什么（很多运算有严格形状要求）
+* `dtype` - 张量元素的数据类型是什么
+* `device` - 张量存在哪个设备上（通常是 CPU 或 GPU）
 
-Let's create a random tensor and find out details about it.
+我们创建一个随机张量并查看这些信息。
 
 
 ```python
@@ -644,31 +644,31 @@ print(f"Device tensor is stored on: {some_tensor.device}") # will default to CPU
     Device tensor is stored on: cpu
 
 
-> **Note:** When you run into issues in PyTorch, it's very often one to do with one of the three attributes above. So when the error messages show up, sing yourself a little song called "what, what, where": 
-  * "*what shape are my tensors? what datatype are they and where are they stored? what shape, what datatype, where where where*"
+> **注意：** PyTorch 中很多报错都和上面三个属性有关。看到错误时可以先问自己：
+    * “形状是什么？类型是什么？设备在哪里？”
 
-## Manipulating tensors (tensor operations)
+## 张量操作（tensor operations）
 
-In deep learning, data (images, text, video, audio, protein structures, etc) gets represented as tensors.
+在深度学习里，图像、文本、视频、音频、蛋白质结构等数据都可表示成张量。
 
-A model learns by investigating those tensors and performing a series of operations (could be 1,000,000s+) on tensors to create a representation of the patterns in the input data.
+模型通过对张量进行大量运算（可能达到百万级以上）来学习输入数据中的模式。
 
-These operations are often a wonderful dance between:
-* Addition
-* Substraction
-* Multiplication (element-wise)
-* Division
-* Matrix multiplication
+这些运算主要围绕以下几类：
+* 加法（Addition）
+* 减法（Substraction）
+* 乘法（元素级，Multiplication）
+* 除法（Division）
+* 矩阵乘法（Matrix multiplication）
 
-And that's it. Sure there are a few more here and there but these are the basic building blocks of neural networks.
+基本上就这些。虽然还有更多操作，但这几类是神经网络的核心积木。
 
-Stacking these building blocks in the right way, you can create the most sophisticated of neural networks (just like lego!).
+把这些操作按正确方式堆叠起来，就能构建很复杂的神经网络（就像搭乐高）。
 
-### Basic operations
+### 基础运算
 
-Let's start with a few of the fundamental operations, addition (`+`), subtraction (`-`), mutliplication (`*`).
+先从最基础的三个操作开始：加法（`+`）、减法（`-`）、乘法（`*`）。
 
-They work just as you think they would.
+它们的行为和你预期一致。
 
 
 ```python
@@ -697,7 +697,7 @@ tensor * 10
 
 
 
-Notice how the tensor values above didn't end up being `tensor([110, 120, 130])`, this is because the values inside the tensor don't change unless they're reassigned.
+注意上面结果并没有变成 `tensor([110, 120, 130])`。因为张量值不会原地改变，除非你把结果重新赋值回变量。
 
 
 ```python
@@ -712,7 +712,7 @@ tensor
 
 
 
-Let's subtract a number and this time we'll reassign the `tensor` variable. 
+接下来我们减去一个数，并把结果重新赋值给 `tensor`。
 
 
 ```python
@@ -742,7 +742,7 @@ tensor
 
 
 
-PyTorch also has a bunch of built-in functions like [`torch.mul()`](https://pytorch.org/docs/stable/generated/torch.mul.html#torch.mul) (short for multiplcation) and [`torch.add()`](https://pytorch.org/docs/stable/generated/torch.add.html) to perform basic operations. 
+PyTorch 也提供了很多内置函数，如 [`torch.mul()`](https://pytorch.org/docs/stable/generated/torch.mul.html#torch.mul)（乘法）和 [`torch.add()`](https://pytorch.org/docs/stable/generated/torch.add.html)（加法）。
 
 
 ```python
@@ -770,7 +770,7 @@ tensor
 
 
 
-However, it's more common to use the operator symbols like `*` instead of `torch.mul()`
+不过在日常代码里，更常直接使用 `*` 这类操作符。
 
 
 ```python
@@ -783,26 +783,26 @@ print("Equals:", tensor * tensor)
     Equals: tensor([1, 4, 9])
 
 
-### Matrix multiplication (is all you need)
+### 矩阵乘法（核心中的核心）
 
-One of the most common operations in machine learning and deep learning algorithms (like neural networks) is [matrix multiplication](https://www.mathsisfun.com/algebra/matrix-multiplying.html).
+机器学习和深度学习（如神经网络）最常见的操作之一就是 [矩阵乘法](https://www.mathsisfun.com/algebra/matrix-multiplying.html)。
 
-PyTorch implements matrix multiplication functionality in the [`torch.matmul()`](https://pytorch.org/docs/stable/generated/torch.matmul.html) method.
+在 PyTorch 中，可通过 [`torch.matmul()`](https://pytorch.org/docs/stable/generated/torch.matmul.html) 执行矩阵乘法。
 
-The main two rules for matrix multiplication to remember are:
-1. The **inner dimensions** must match:
+矩阵乘法要牢记两条规则：
+1. **内维度**必须匹配：
   * `(3, 2) @ (3, 2)` won't work
   * `(2, 3) @ (3, 2)` will work
   * `(3, 2) @ (2, 3)` will work
-2. The resulting matrix has the shape of the **outer dimensions**:
+2. 结果形状由**外维度**决定：
  * `(2, 3) @ (3, 2)` -> `(2, 2)`
  * `(3, 2) @ (2, 3)` -> `(3, 3)`
 
-> **Note:** "`@`" in Python is the symbol for matrix multiplication.
+> **注意：** Python 里 `@` 是矩阵乘法运算符。
 
-> **Resource:** You can see all of the rules for matrix multiplication using `torch.matmul()` [in the PyTorch documentation](https://pytorch.org/docs/stable/generated/torch.matmul.html).
+> **参考：** `torch.matmul()` 的完整规则见 [PyTorch 文档](https://pytorch.org/docs/stable/generated/torch.matmul.html)。
 
-Let's create a tensor and perform element-wise multiplication and matrix multiplication on it.
+下面创建一个张量，对比元素级乘法和矩阵乘法。
 
 
 
@@ -820,14 +820,14 @@ tensor.shape
 
 
 
-The difference between element-wise multiplication and matrix multiplication is the addition of values.
+两者关键区别在于：矩阵乘法会涉及求和累加，而元素级乘法不会。
 
 For our `tensor` variable with values `[1, 2, 3]`:
 
-| Operation | Calculation | Code |
-| ----- | ----- | ----- |
-| **Element-wise multiplication** | `[1*1, 2*2, 3*3]` = `[1, 4, 9]` | `tensor * tensor` |
-| **Matrix multiplication** | `[1*1 + 2*2 + 3*3]` = `[14]` | `tensor.matmul(tensor)` |
+| Operation                       | Calculation                     | Code                    |
+| ------------------------------- | ------------------------------- | ----------------------- |
+| **Element-wise multiplication** | `[1*1, 2*2, 3*3]` = `[1, 4, 9]` | `tensor * tensor`       |
+| **Matrix multiplication**       | `[1*1 + 2*2 + 3*3]` = `[14]`    | `tensor.matmul(tensor)` |
 
 
 
@@ -869,9 +869,9 @@ tensor @ tensor
 
 
 
-You can do matrix multiplication by hand but it's not recommended.
+你当然可以手写循环做矩阵乘法，但不推荐。
 
-The in-built `torch.matmul()` method is faster.
+内置 `torch.matmul()` 通常更快。
 
 
 ```python
@@ -912,9 +912,9 @@ torch.matmul(tensor, tensor)
 
 
 
-## One of the most common errors in deep learning (shape errors)
+## 深度学习最常见错误之一（形状错误）
 
-Because much of deep learning is multiplying and performing operations on matrices and matrices have a strict rule about what shapes and sizes can be combined, one of the most common errors you'll run into in deep learning is shape mismatches.
+由于深度学习大量依赖矩阵运算，而矩阵运算对形状有严格约束，所以“形状不匹配”是最高频错误之一。
 
 
 ```python
@@ -944,15 +944,15 @@ torch.matmul(tensor_A, tensor_B) # (this will error)
     RuntimeError: mat1 and mat2 shapes cannot be multiplied (3x2 and 3x2)
 
 
-We can make matrix multiplication work between `tensor_A` and `tensor_B` by making their inner dimensions match.
+要让 `tensor_A` 和 `tensor_B` 能相乘，需要让它们的内维度匹配。
 
-One of the ways to do this is with a **transpose** (switch the dimensions of a given tensor).
+常见方法是做 **转置（transpose）**，交换张量维度。
 
-You can perform transposes in PyTorch using either:
-* `torch.transpose(input, dim0, dim1)` - where `input` is the desired tensor to transpose and `dim0` and `dim1` are the dimensions to be swapped.
-* `tensor.T` - where `tensor` is the desired tensor to transpose.
+在 PyTorch 中可通过两种方式转置：
+* `torch.transpose(input, dim0, dim1)`：`input` 为目标张量，`dim0` 与 `dim1` 为要交换的维度。
+* `tensor.T`：对 `tensor` 做转置的简写。
 
-Let's try the latter.
+我们先试第二种。
 
 
 ```python
@@ -1010,7 +1010,7 @@ print(f"\nOutput shape: {output.shape}")
     Output shape: torch.Size([3, 3])
 
 
-You can also use [`torch.mm()`](https://pytorch.org/docs/stable/generated/torch.mm.html) which is a short for `torch.matmul()`.
+你也可以用 [`torch.mm()`](https://pytorch.org/docs/stable/generated/torch.mm.html)，它是 `torch.matmul()` 的常见简写（针对二维矩阵）。
 
 
 ```python
@@ -1027,40 +1027,40 @@ torch.mm(tensor_A, tensor_B.T)
 
 
 
-Without the transpose, the rules of matrix mulitplication aren't fulfilled and we get an error like above.
+如果不转置，就不满足矩阵乘法规则，会出现上面的报错。
 
-How about a visual? 
+看个可视化会更直观。
 
 ![visual demo of matrix multiplication](https://github.com/mrdbourke/pytorch-deep-learning/raw/main/images/00-matrix-multiply-crop.gif)
 
-You can create your own matrix multiplication visuals like this at http://matrixmultiplication.xyz/.
+你也可以在 http://matrixmultiplication.xyz/ 自己做矩阵乘法可视化演示。
 
-> **Note:** A matrix multiplication like this is also referred to as the [**dot product**](https://www.mathsisfun.com/algebra/vectors-dot-product.html) of two matrices.
+> **注意：** 这种运算也常称为两个矩阵的 [**点积（dot product）**](https://www.mathsisfun.com/algebra/vectors-dot-product.html)。
 
 
 
-Neural networks are full of matrix multiplications and dot products.
+神经网络里到处都是矩阵乘法和点积。
 
-The [`torch.nn.Linear()`](https://pytorch.org/docs/1.9.1/generated/torch.nn.Linear.html) module (we'll see this in action later on), also known as a feed-forward layer or fully connected layer, implements a matrix multiplication between an input `x` and a weights matrix `A`.
+[`torch.nn.Linear()`](https://pytorch.org/docs/1.9.1/generated/torch.nn.Linear.html)（也叫全连接层/前馈层）本质上就是输入 `x` 与权重矩阵 `A` 的矩阵乘法，再加上偏置。
 
 $$
 y = x\cdot{A^T} + b
 $$
 
-Where:
-* `x` is the input to the layer (deep learning is a stack of layers like `torch.nn.Linear()` and others on top of each other).
-* `A` is the weights matrix created by the layer, this starts out as random numbers that get adjusted as a neural network learns to better represent patterns in the data (notice the "`T`", that's because the weights matrix gets transposed).
-  * **Note:** You might also often see `W` or another letter like `X` used to showcase the weights matrix.
-* `b` is the bias term used to slightly offset the weights and inputs.
-* `y` is the output (a manipulation of the input in the hopes to discover patterns in it).
+其中：
+* `x` 是层输入（深度学习模型就是很多层的堆叠）。
+* `A` 是层中的权重矩阵，初始通常为随机值，训练过程中会被更新（式子中的 `T` 表示转置）。
+    * **注意：** 权重矩阵也常记作 `W` 或其他大写字母。
+* `b` 是偏置项，用于对线性变换做平移。
+* `y` 是层输出（对输入进行变换后得到）。
 
-This is a linear function (you may have seen something like $y = mx+b$ in high school or elsewhere), and can be used to draw a straight line!
+这就是线性函数（你可能见过 $y = mx+b$），其几何意义是直线变换。
 
-Let's play around with a linear layer.
+我们来实际试试线性层。
 
-Try changing the values of `in_features` and `out_features` below and see what happens.
+你可以改改下面的 `in_features` 和 `out_features` 看看会发生什么。
 
-Do you notice anything to do with the shapes?
+留意输出形状和输入形状的关系。
 
 
 ```python
@@ -1086,23 +1086,23 @@ print(f"Output:\n{output}\n\nOutput shape: {output.shape}")
     Output shape: torch.Size([3, 6])
 
 
-> **Question:** What happens if you change `in_features` from 2 to 3 above? Does it error? How could you change the shape of the input (`x`) to accomodate to the error? Hint: what did we have to do to `tensor_B` above?
+> **思考题：** 如果把 `in_features` 从 2 改成 3，会报错吗？你该如何调整输入 `x` 的形状来适配？提示：回想上面我们是怎么处理 `tensor_B` 的。
 
-If you've never done it before, matrix multiplication can be a confusing topic at first.
+如果你是第一次接触，矩阵乘法一开始会有点绕。
 
-But after you've played around with it a few times and even cracked open a few neural networks, you'll notice it's everywhere.
+但多练几次、再看几个神经网络实现后，你会发现它无处不在。
 
-Remember, matrix multiplication is all you need.
+记住这句话：矩阵乘法非常核心。
 
 ![matrix multiplication is all you need](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00_matrix_multiplication_is_all_you_need.jpeg)
 
 *When you start digging into neural network layers and building your own, you'll find matrix multiplications everywhere. **Source:** https://marksaroufim.substack.com/p/working-class-deep-learner*
 
-### Finding the min, max, mean, sum, etc (aggregation)
+### 求最小值、最大值、均值、求和等（聚合）
 
-Now we've seen a few ways to manipulate tensors, let's run through a few ways to aggregate them (go from more values to less values).
+前面我们讲了很多张量操作，接下来看看聚合操作（把多值压缩成少值）。
 
-First we'll create a tensor and then find the max, min, mean and sum of it.
+先创建一个张量，再求它的 max、min、mean 和 sum。
 
 
 
@@ -1122,7 +1122,7 @@ x
 
 
 
-Now let's perform some aggregation.
+开始聚合运算。
 
 
 ```python
@@ -1139,9 +1139,9 @@ print(f"Sum: {x.sum()}")
     Sum: 450
 
 
-> **Note:** You may find some methods such as `torch.mean()` require tensors to be in `torch.float32` (the most common) or another specific datatype, otherwise the operation will fail. 
+> **注意：** 像 `torch.mean()` 这类方法通常要求张量是 `torch.float32`（或其他特定浮点类型），否则会失败。
 
-You can also do the same as above with `torch` methods.
+同样的操作也可以直接使用 `torch` 函数调用。
 
 
 ```python
@@ -1155,11 +1155,11 @@ torch.max(x), torch.min(x), torch.mean(x.type(torch.float32)), torch.sum(x)
 
 
 
-### Positional min/max
+### 最值对应的位置（索引）
 
-You can also find the index of a tensor where the max or minimum occurs with [`torch.argmax()`](https://pytorch.org/docs/stable/generated/torch.argmax.html) and [`torch.argmin()`](https://pytorch.org/docs/stable/generated/torch.argmin.html) respectively.
+你还可以用 [`torch.argmax()`](https://pytorch.org/docs/stable/generated/torch.argmax.html) 和 [`torch.argmin()`](https://pytorch.org/docs/stable/generated/torch.argmin.html) 找到最大值/最小值所在索引。
 
-This is helpful incase you just want the position where the highest (or lowest) value is and not the actual value itself (we'll see this in a later section when using the [softmax activation function](https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html)).
+当你只关心“位置”而不是“具体数值”时，这非常有用（后面讲 [softmax 激活函数](https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html) 时会再次遇到）。
 
 
 ```python
@@ -1177,17 +1177,17 @@ print(f"Index where min value occurs: {tensor.argmin()}")
     Index where min value occurs: 0
 
 
-### Change tensor datatype
+### 修改张量数据类型
 
-As mentioned, a common issue with deep learning operations is having your tensors in different datatypes.
+前面提到过，深度学习里常见问题之一是张量类型不一致。
 
-If one tensor is in `torch.float64` and another is in `torch.float32`, you might run into some errors.
+例如一个是 `torch.float64`，另一个是 `torch.float32`，运算时可能报错。
 
-But there's a fix.
+但这是可以修复的。
 
-You can change the datatypes of tensors using [`torch.Tensor.type(dtype=None)`](https://pytorch.org/docs/stable/generated/torch.Tensor.type.html) where the `dtype` parameter is the datatype you'd like to use.
+你可以使用 [`torch.Tensor.type(dtype=None)`](https://pytorch.org/docs/stable/generated/torch.Tensor.type.html) 转换张量类型，`dtype` 传入目标类型即可。
 
-First we'll create a tensor and check it's datatype (the default is `torch.float32`).
+先创建一个张量并检查其默认类型（`torch.float32`）。
 
 
 ```python
@@ -1203,7 +1203,7 @@ tensor.dtype
 
 
 
-Now we'll create another tensor the same as before but change its datatype to `torch.float16`.
+接着创建同样内容但 `dtype=torch.float16` 的张量。
 
 
 
@@ -1221,7 +1221,7 @@ tensor_float16
 
 
 
-And we can do something similar to make a `torch.int8` tensor.
+同理也可以转换成 `torch.int8`。
 
 
 ```python
@@ -1237,32 +1237,32 @@ tensor_int8
 
 
 
-> **Note:** Different datatypes can be confusing to begin with. But think of it like this, the lower the number (e.g. 32, 16, 8), the less precise a computer stores the value. And with a lower amount of storage, this generally results in faster computation and a smaller overall model. Mobile-based neural networks often operate with 8-bit integers, smaller and faster to run but less accurate than their float32 counterparts. For more on this, I'd read up about [precision in computing](https://en.wikipedia.org/wiki/Precision_(computer_science)).
+> **注意：** 不同类型起初确实容易混淆。可以这样理解：位宽越低（如 16、8），精度通常越低，但计算更快、模型更小。移动端网络常用 8 位整数以提升速度与部署效率，但准确性可能不如 float32。更多可读 [precision in computing](https://en.wikipedia.org/wiki/Precision_(computer_science))。
 
-> **Exercise:** So far we've covered a fair few tensor methods but there's a bunch more in the [`torch.Tensor` documentation](https://pytorch.org/docs/stable/tensors.html), I'd recommend spending 10-minutes scrolling through and looking into any that catch your eye. Click on them and then write them out in code yourself to see what happens.
+> **练习建议：** 我们已经覆盖了不少方法，但 [`torch.Tensor` 文档](https://pytorch.org/docs/stable/tensors.html) 里还有很多。建议花 10 分钟浏览，挑几个感兴趣的方法自己写代码试一遍。
 
-### Reshaping, stacking, squeezing and unsqueezing
+### 形状变换：reshape、stack、squeeze、unsqueeze
 
-Often times you'll want to reshape or change the dimensions of your tensors without actually changing the values inside them.
+很多时候你需要改变张量形状或维度，但不改变其中数值。
 
-To do so, some popular methods are:
+常用方法如下：
 
-| Method | One-line description |
-| ----- | ----- |
-| [`torch.reshape(input, shape)`](https://pytorch.org/docs/stable/generated/torch.reshape.html#torch.reshape) | Reshapes `input` to `shape` (if compatible), can also use `torch.Tensor.reshape()`. |
-| [`torch.Tensor.view(shape)`](https://pytorch.org/docs/stable/generated/torch.Tensor.view.html) | Returns a view of the original tensor in a different `shape` but shares the same data as the original tensor. |
-| [`torch.stack(tensors, dim=0)`](https://pytorch.org/docs/1.9.1/generated/torch.stack.html) | Concatenates a sequence of `tensors` along a new dimension (`dim`), all `tensors` must be same size. |
-| [`torch.squeeze(input)`](https://pytorch.org/docs/stable/generated/torch.squeeze.html) | Squeezes `input` to remove all the dimenions with value `1`. |
-| [`torch.unsqueeze(input, dim)`](https://pytorch.org/docs/1.9.1/generated/torch.unsqueeze.html) | Returns `input` with a dimension value of `1` added at `dim`. | 
-| [`torch.permute(input, dims)`](https://pytorch.org/docs/stable/generated/torch.permute.html) | Returns a *view* of the original `input` with its dimensions permuted (rearranged) to `dims`. | 
+| 方法                                                                                                        | 一句话说明                                                               |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [`torch.reshape(input, shape)`](https://pytorch.org/docs/stable/generated/torch.reshape.html#torch.reshape) | 将 `input` 变为目标 `shape`（若兼容），也可用 `torch.Tensor.reshape()`。 |
+| [`torch.Tensor.view(shape)`](https://pytorch.org/docs/stable/generated/torch.Tensor.view.html)              | 返回原张量在新形状下的视图（共享同一底层数据）。                         |
+| [`torch.stack(tensors, dim=0)`](https://pytorch.org/docs/1.9.1/generated/torch.stack.html)                  | 在新维度 `dim` 上堆叠一组张量（所有张量形状需一致）。                    |
+| [`torch.squeeze(input)`](https://pytorch.org/docs/stable/generated/torch.squeeze.html)                      | 删除所有长度为 `1` 的维度。                                              |
+| [`torch.unsqueeze(input, dim)`](https://pytorch.org/docs/1.9.1/generated/torch.unsqueeze.html)              | 在指定 `dim` 位置插入一个长度为 `1` 的维度。                             |
+| [`torch.permute(input, dims)`](https://pytorch.org/docs/stable/generated/torch.permute.html)                | 返回一个维度重排后的视图（不复制底层数据）。                             |
 
-Why do any of these?
+为什么要用这些？
 
-Because deep learning models (neural networks) are all about manipulating tensors in some way. And because of the rules of matrix multiplication, if you've got shape mismatches, you'll run into errors. These methods help you make the right elements of your tensors are mixing with the right elements of other tensors. 
+因为神经网络本质上就是对张量不断变换与计算。若形状不符合矩阵规则就会报错，这些方法能帮你把维度整理到可运算状态。
 
-Let's try them out.
+我们来逐个试一下。
 
-First, we'll create a tensor.
+先创建一个张量。
 
 
 ```python
@@ -1279,7 +1279,7 @@ x, x.shape
 
 
 
-Now let's add an extra dimension with `torch.reshape()`. 
+先用 `torch.reshape()` 增加一个维度。
 
 
 ```python
@@ -1295,7 +1295,7 @@ x_reshaped, x_reshaped.shape
 
 
 
-We can also change the view with `torch.view()`.
+也可以用 `torch.view()` 改变视图。
 
 
 ```python
@@ -1312,9 +1312,9 @@ z, z.shape
 
 
 
-Remember though, changing the view of a tensor with `torch.view()` really only creates a new view of the *same* tensor.
+要记住，`torch.view()` 只是创建同一底层数据的新视图。
 
-So changing the view changes the original tensor too. 
+所以修改视图中的值，也会影响原张量。
 
 
 ```python
@@ -1330,7 +1330,7 @@ z, x
 
 
 
-If we wanted to stack our new tensor on top of itself five times, we could do so with `torch.stack()`.
+如果想把张量按新维度堆叠多次，可用 `torch.stack()`。
 
 
 ```python
@@ -1349,9 +1349,9 @@ x_stacked
 
 
 
-How about removing all single dimensions from a tensor?
+如果要移除所有长度为 1 的维度呢？
 
-To do so you can use `torch.squeeze()` (I remember this as *squeezing* the tensor to only have dimensions over 1).
+可使用 `torch.squeeze()`（把张量“挤压”掉单维度）。
 
 
 ```python
@@ -1371,7 +1371,7 @@ print(f"New shape: {x_squeezed.shape}")
     New shape: torch.Size([7])
 
 
-And to do the reverse of `torch.squeeze()` you can use `torch.unsqueeze()` to add a dimension value of 1 at a specific index.
+而 `torch.unsqueeze()` 是反向操作：在指定位置加回一个长度为 1 的维度。
 
 
 ```python
@@ -1391,7 +1391,7 @@ print(f"New shape: {x_unsqueezed.shape}")
     New shape: torch.Size([1, 7])
 
 
-You can also rearrange the order of axes values with `torch.permute(input, dims)`, where the `input` gets turned into a *view* with new `dims`.
+你还可以用 `torch.permute(input, dims)` 重排维度顺序，返回的是视图而非深拷贝。
 
 
 ```python
@@ -1409,15 +1409,15 @@ print(f"New shape: {x_permuted.shape}")
     New shape: torch.Size([3, 224, 224])
 
 
-> **Note**: Because permuting returns a *view* (shares the same data as the original), the values in the permuted tensor will be the same as the original tensor and if you change the values in the view, it will change the values of the original.
+> **注意：** `permute` 返回的是视图（共享底层数据），所以改视图会影响原张量。
 
-## Indexing (selecting data from tensors)
+## 索引（从张量中选取数据）
 
-Sometimes you'll want to select specific data from tensors (for example, only the first column or second row).
+有时你只想取张量中的一部分数据（如某一列、某一行）。
 
-To do so, you can use indexing.
+这时就用索引。
 
-If you've ever done indexing on Python lists or NumPy arrays, indexing in PyTorch with tensors is very similar.
+如果你用过 Python 列表或 NumPy 数组索引，PyTorch 的索引逻辑非常相近。
 
 
 ```python
@@ -1437,7 +1437,7 @@ x, x.shape
 
 
 
-Indexing values goes outer dimension -> inner dimension (check out the square brackets).
+索引顺序通常是从外层维度到内层维度（可结合方括号理解）。
 
 
 ```python
@@ -1455,7 +1455,7 @@ print(f"Third square bracket: {x[0][0][0]}")
     Third square bracket: 1
 
 
-You can also use `:` to specify "all values in this dimension" and then use a comma (`,`) to add another dimension.
+你还可以用 `:` 表示“该维度全部元素”，再用逗号 `,` 继续指定下一维。
 
 
 ```python
@@ -1509,17 +1509,17 @@ x[0, 0, :] # same as x[0][0]
 
 
 
-Indexing can be quite confusing to begin with, especially with larger tensors (I still have to try indexing multiple times to get it right). But with a bit of practice and following the data explorer's motto (***visualize, visualize, visualize***), you'll start to get the hang of it.
+索引一开始可能有点绕，特别是高维张量。多练习并多做可视化，你会很快熟悉。
 
-## PyTorch tensors & NumPy
+## PyTorch 张量与 NumPy
 
-Since NumPy is a popular Python numerical computing library, PyTorch has functionality to interact with it nicely.  
+NumPy 是 Python 里最常用的数值计算库之一，PyTorch 对它提供了良好互操作支持。
 
-The two main methods you'll want to use for NumPy to PyTorch (and back again) are: 
-* [`torch.from_numpy(ndarray)`](https://pytorch.org/docs/stable/generated/torch.from_numpy.html) - NumPy array -> PyTorch tensor. 
-* [`torch.Tensor.numpy()`](https://pytorch.org/docs/stable/generated/torch.Tensor.numpy.html) - PyTorch tensor -> NumPy array.
+最常用的两个方法是：
+* [`torch.from_numpy(ndarray)`](https://pytorch.org/docs/stable/generated/torch.from_numpy.html)：NumPy array -> PyTorch tensor。
+* [`torch.Tensor.numpy()`](https://pytorch.org/docs/stable/generated/torch.Tensor.numpy.html)：PyTorch tensor -> NumPy array。
 
-Let's try them out.
+我们来试一下。
 
 
 ```python
@@ -1539,13 +1539,13 @@ array, tensor
 
 
 
-> **Note:** By default, NumPy arrays are created with the datatype `float64` and if you convert it to a PyTorch tensor, it'll keep the same datatype (as above). 
+> **注意：** NumPy 默认常用 `float64`，转到 PyTorch 后会保留该类型。
 >
-> However, many PyTorch calculations default to using `float32`. 
-> 
-> So if you want to convert your NumPy array (float64) -> PyTorch tensor (float64) -> PyTorch tensor (float32), you can use `tensor = torch.from_numpy(array).type(torch.float32)`.
+> 但 PyTorch 很多计算默认更偏向 `float32`。
+>
+> 因此如果你要把 NumPy `float64` 转成 PyTorch `float32`，可写：`tensor = torch.from_numpy(array).type(torch.float32)`。
 
-Because we reassigned `tensor` above, if you change the tensor, the array stays the same.
+由于上面重新赋值了 `tensor`，后续改 `tensor` 时，`array` 不会跟着变。
 
 
 ```python
@@ -1562,7 +1562,7 @@ array, tensor
 
 
 
-And if you want to go from PyTorch tensor to NumPy array, you can call `tensor.numpy()`.
+反过来，从 PyTorch 转到 NumPy 可直接调用 `tensor.numpy()`。
 
 
 ```python
@@ -1580,7 +1580,7 @@ tensor, numpy_tensor
 
 
 
-And the same rule applies as above, if you change the original `tensor`, the new `numpy_tensor` stays the same.
+同理，若重新赋值修改原 `tensor`，`numpy_tensor` 仍保持原值。
 
 
 ```python
@@ -1597,39 +1597,39 @@ tensor, numpy_tensor
 
 
 
-## Reproducibility (trying to take the random out of random)
+## 可复现性（让随机变得可控）
 
-As you learn more about neural networks and machine learning, you'll start to discover how much randomness plays a part.
+随着你学习深入，会发现神经网络和机器学习里“随机性”无处不在。
 
-Well, pseudorandomness that is. Because after all, as they're designed, a computer is fundamentally deterministic (each step is predictable) so the randomness they create are simulated randomness (though there is debate on this too, but since I'm not a computer scientist, I'll let you find out more yourself).
+更准确说是“伪随机”。计算机本质是确定性的，因此所谓随机通常是通过算法模拟出来的随机序列。
 
-How does this relate to neural networks and deep learning then?
+这和深度学习有什么关系？
 
-We've discussed neural networks start with random numbers to describe patterns in data (these numbers are poor descriptions) and try to improve those random numbers using tensor operations (and a few other things we haven't discussed yet) to better describe patterns in data.
+我们提到过：神经网络通常从随机参数开始，再通过张量运算不断更新参数，以更好拟合数据模式。
 
-In short: 
+简化成一句话：
 
-``start with random numbers -> tensor operations -> try to make better (again and again and again)``
+`随机初始化 -> 张量运算更新 -> 持续迭代优化`
 
-Although randomness is nice and powerful, sometimes you'd like there to be a little less randomness.
+随机性很有用，但有时我们希望它“少随机一点”。
 
-Why?
+为什么？
 
-So you can perform repeatable experiments.
+因为我们需要可重复实验。
 
-For example, you create an algorithm capable of achieving X performance.
+比如你实现了一个能达到某个性能的算法。
 
-And then your friend tries it out to verify you're not crazy.
+你的同学想复现实验验证结果。
 
-How could they do such a thing?
+他要如何得到与你一致的结果？
 
-That's where **reproducibility** comes in.
+这就是**可复现性（reproducibility）**的意义。
 
-In other words, can you get the same (or very similar) results on your computer running the same code as I get on mine?
+也就是说：同样代码在不同机器上，能否得到相同或非常接近的结果？
 
-Let's see a brief example of reproducibility in PyTorch.
+下面用一个简短例子说明 PyTorch 中的可复现性。
 
-We'll start by creating two random tensors, since they're random, you'd expect them to be different right? 
+先创建两个随机张量。按直觉，它们应该不同。
 
 
 ```python
@@ -1667,15 +1667,15 @@ random_tensor_A == random_tensor_B
 
 
 
-Just as you might've expected, the tensors come out with different values.
+结果和预期一致：两个张量值不同。
 
-But what if you wanted to created two random tensors with the *same* values.
+如果你希望两次随机生成结果一致呢？
 
-As in, the tensors would still contain random values but they would be of the same flavour.
+也就是“仍然是随机数，但每次生成同一组随机序列”。
 
-That's where [`torch.manual_seed(seed)`](https://pytorch.org/docs/stable/generated/torch.manual_seed.html) comes in, where `seed` is an integer (like `42` but it could be anything) that flavours the randomness.
+这时用 [`torch.manual_seed(seed)`](https://pytorch.org/docs/stable/generated/torch.manual_seed.html)。`seed` 是整数（如 `42`），用于固定随机序列。
 
-Let's try it out by creating some more *flavoured* random tensors.
+我们来试试固定 seed 后的随机张量。
 
 
 ```python
@@ -1720,50 +1720,50 @@ random_tensor_C == random_tensor_D
 
 
 
-Nice!
+很好。
 
-It looks like setting the seed worked. 
+看起来 seed 已生效。
 
-> **Resource:** What we've just covered only scratches the surface of reproducibility in PyTorch. For more, on reproducbility in general and random seeds, I'd checkout:
-> * [The PyTorch reproducibility documentation](https://pytorch.org/docs/stable/notes/randomness.html) (a good exericse would be to read through this for 10-minutes and even if you don't understand it now, being aware of it is important).
-> * [The Wikipedia random seed page](https://en.wikipedia.org/wiki/Random_seed) (this'll give a good overview of random seeds and pseudorandomness in general).
+> **参考资源：** 我们这里只是触及可复现性的基础。建议继续阅读：
+> * [PyTorch reproducibility 文档](https://pytorch.org/docs/stable/notes/randomness.html)（建议至少花 10 分钟浏览，先建立认知）。
+> * [Wikipedia: Random seed](https://en.wikipedia.org/wiki/Random_seed)（理解随机种子与伪随机原理）。
 
-## Running tensors on GPUs (and making faster computations)
+## 在 GPU 上运行张量（加速计算）
 
-Deep learning algorithms require a lot of numerical operations.
+深度学习算法需要大量数值计算。
 
-And by default these operations are often done on a CPU (computer processing unit).
+默认情况下，这些计算通常在 CPU 上执行。
 
-However, there's another common piece of hardware called a GPU (graphics processing unit), which is often much faster at performing the specific types of operations neural networks need (matrix multiplications) than CPUs.
+但另一类常见硬件 GPU（图形处理器）在神经网络核心操作（如矩阵乘法）上通常比 CPU 快很多。
 
-Your computer might have one.
+你的机器可能就有 GPU。
 
-If so, you should look to use it whenever you can to train neural networks because chances are it'll speed up the training time dramatically.
+如果有，训练神经网络时应尽量使用它，训练速度通常会显著提升。
 
-There are a few ways to first get access to a GPU and secondly get PyTorch to use the GPU.
+接下来分两步：先获得 GPU 资源，再让 PyTorch 使用它。
 
-> **Note:** When I reference "GPU" throughout this course, I'm referencing a [Nvidia GPU with CUDA](https://developer.nvidia.com/cuda-gpus) enabled (CUDA is a computing platform and API that helps allow GPUs be used for general purpose computing & not just graphics) unless otherwise specified.
-
-
+> **注意：** 本课程提到“GPU”时，默认指支持 CUDA 的 [NVIDIA GPU](https://developer.nvidia.com/cuda-gpus)（除非另有说明）。
 
 
-### 1. Getting a GPU
 
-You may already know what's going on when I say GPU. But if not, there are a few ways to get access to one.
 
-| **Method** | **Difficulty to setup** | **Pros** | **Cons** | **How to setup** |
-| ----- | ----- | ----- | ----- | ----- |
-| Google Colab | Easy | Free to use, almost zero setup required, can share work with others as easy as a link | Doesn't save your data outputs, limited compute, subject to timeouts | [Follow the Google Colab Guide](https://colab.research.google.com/notebooks/gpu.ipynb) |
-| Use your own | Medium | Run everything locally on your own machine | GPUs aren't free, require upfront cost | Follow the [PyTorch installation guidelines](https://pytorch.org/get-started/locally/) |
-| Cloud computing (AWS, GCP, Azure) | Medium-Hard | Small upfront cost, access to almost infinite compute | Can get expensive if running continually, takes some time ot setup right | Follow the [PyTorch installation guidelines](https://pytorch.org/get-started/cloud-partners/) |
+### 1. 获得 GPU
 
-There are more options for using GPUs but the above three will suffice for now.
+你可能已经熟悉 GPU；如果还不熟，下面是常见获取方式。
 
-Personally, I use a combination of Google Colab and my own personal computer for small scale experiments (and creating this course) and go to cloud resources when I need more compute power.
+| **方式**                | **配置难度** | **优点**                       | **缺点**                           | **如何配置**                                                               |
+| ----------------------- | ------------ | ------------------------------ | ---------------------------------- | -------------------------------------------------------------------------- |
+| Google Colab            | 低           | 免费、几乎零配置、链接即可分享 | 结果不易持久保存、算力受限、会超时 | [Google Colab 指南](https://colab.research.google.com/notebooks/gpu.ipynb) |
+| 自有设备                | 中           | 本地全可控                     | GPU 成本高、需前期投入             | [PyTorch 本地安装指南](https://pytorch.org/get-started/locally/)           |
+| 云计算（AWS/GCP/Azure） | 中-高        | 前期投入小、可扩展算力大       | 持续运行成本高、配置较复杂         | [PyTorch 云平台指南](https://pytorch.org/get-started/cloud-partners/)      |
 
-> **Resource:** If you're looking to purchase a GPU of your own but not sure what to get, [Tim Dettmers has an excellent guide](https://timdettmers.com/2020/09/07/which-gpu-for-deep-learning/).
+GPU 方案远不止这三种，但对入门阶段已足够。
 
-To check if you've got access to a Nvidia GPU, you can run `!nvidia-smi` where the `!` (also called bang) means "run this on the command line".
+我个人通常是 Colab + 本地机器做小规模实验，需要更大算力时再上云。
+
+> **参考：** 如果你打算自购 GPU，可参考 [Tim Dettmers 的选购指南](https://timdettmers.com/2020/09/07/which-gpu-for-deep-learning/)。
+
+检查是否可访问 NVIDIA GPU，可运行 `!nvidia-smi`。其中 `!` 表示在命令行执行。
 
 
 
@@ -1775,15 +1775,15 @@ To check if you've got access to a Nvidia GPU, you can run `!nvidia-smi` where t
     /usr/bin/sh: 1: nvidia-smi: not found
 
 
-If you don't have a Nvidia GPU accessible, the above will output something like:
+如果没有可用 NVIDIA GPU，通常会看到类似提示：
 
 ```
 NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
 ```
 
-In that case, go back up and follow the install steps.
+这时请回到上面的安装步骤重新检查环境。
 
-If you do have a GPU, the line above will output something like:
+如果有 GPU，则会输出类似下方信息：
 
 ```
 Wed Jan 19 22:09:08 2022       
@@ -1810,15 +1810,15 @@ Wed Jan 19 22:09:08 2022
 
 
 
-### 2. Getting PyTorch to run on the GPU
+### 2. 让 PyTorch 使用 GPU
 
-Once you've got a GPU ready to access, the next step is getting PyTorch to use for storing data (tensors) and computing on data (performing operations on tensors).
+拿到 GPU 后，下一步是让 PyTorch 用 GPU 存储张量并执行计算。
 
-To do so, you can use the [`torch.cuda`](https://pytorch.org/docs/stable/cuda.html) package.
+这需要用到 [`torch.cuda`](https://pytorch.org/docs/stable/cuda.html) 模块。
 
-Rather than talk about it, let's try it out.
+直接实操更直观。
 
-You can test if PyTorch has access to a GPU using [`torch.cuda.is_available()`](https://pytorch.org/docs/stable/generated/torch.cuda.is_available.html#torch.cuda.is_available).
+可用 [`torch.cuda.is_available()`](https://pytorch.org/docs/stable/generated/torch.cuda.is_available.html#torch.cuda.is_available) 检查 PyTorch 是否识别 GPU。
 
 
 
@@ -1835,13 +1835,13 @@ torch.cuda.is_available()
 
 
 
-If the above outputs `True`, PyTorch can see and use the GPU, if it outputs `False`, it can't see the GPU and in that case, you'll have to go back through the installation steps.
+若输出 `True`，说明可用；若是 `False`，说明当前环境还未正确配置 GPU 支持。
 
-Now, let's say you wanted to setup your code so it ran on CPU *or* the GPU if it was available.
+通常我们希望代码可在 CPU 或 GPU 上自动运行。
 
-That way, if you or someone decides to run your code, it'll work regardless of the computing device they're using. 
+这样无论谁运行代码，都能在现有设备上正常执行。
 
-Let's create a `device` variable to store what kind of device is available.
+因此先定义 `device` 变量保存当前可用设备类型。
 
 
 ```python
@@ -1857,13 +1857,13 @@ device
 
 
 
-If the above output `"cuda"` it means we can set all of our PyTorch code to use the available CUDA device (a GPU) and if it output `"cpu"`, our PyTorch code will stick with the CPU.
+如果输出是 `"cuda"`，表示可用 GPU；若输出 `"cpu"`，则代码会继续在 CPU 上运行。
 
-> **Note:** In PyTorch, it's best practice to write [**device agnostic code**](https://pytorch.org/docs/master/notes/cuda.html#device-agnostic-code). This means code that'll run on CPU (always available) or GPU (if available).
+> **注意：** 在 PyTorch 中，推荐写 [**device agnostic code**](https://pytorch.org/docs/master/notes/cuda.html#device-agnostic-code)，即代码可在 CPU 与 GPU 间自动适配。
 
-If you want to do faster computing you can use a GPU but if you want to do *much* faster computing, you can use multiple GPUs.
+想更快可以用单 GPU；想再快一个量级，可考虑多 GPU。
 
-You can count the number of GPUs PyTorch has access to using [`torch.cuda.device_count()`](https://pytorch.org/docs/stable/generated/torch.cuda.device_count.html#torch.cuda.device_count).
+可通过 [`torch.cuda.device_count()`](https://pytorch.org/docs/stable/generated/torch.cuda.device_count.html#torch.cuda.device_count) 查看可用 GPU 数量。
 
 
 ```python
@@ -1878,21 +1878,21 @@ torch.cuda.device_count()
 
 
 
-Knowing the number of GPUs PyTorch has access to is helpful incase you wanted to run a specific process on one GPU and another process on another (PyTorch also has features to let you run a process across *all* GPUs).
+知道 GPU 数量有助于做多卡任务分配（PyTorch 也支持跨多卡并行）。
 
-### 3. Putting tensors (and models) on the GPU
+### 3. 把张量（和模型）放到 GPU
 
-You can put tensors (and models, we'll see this later) on a specific device by calling [`to(device)`](https://pytorch.org/docs/stable/generated/torch.Tensor.to.html) on them. Where `device` is the target device you'd like the tensor (or model) to go to.
+你可以对张量（模型同理，后面会讲）调用 [`to(device)`](https://pytorch.org/docs/stable/generated/torch.Tensor.to.html) 将其移动到指定设备。
 
-Why do this?
+为什么这样做？
 
-GPUs offer far faster numerical computing than CPUs do and if a GPU isn't available, because of our **device agnostic code** (see above), it'll run on the CPU.
+因为 GPU 在数值计算上通常更快；若无 GPU，我们的“设备无关代码”会自动退回 CPU。
 
-> **Note:** Putting a tensor on GPU using `to(device)` (e.g. `some_tensor.to(device)`) returns a copy of that tensor, e.g. the same tensor will be on CPU and GPU. To overwrite tensors, reassign them:
+> **注意：** `some_tensor.to(device)` 会返回新副本。若要覆盖原变量，请重新赋值：
 >
 > `some_tensor = some_tensor.to(device)`
 
-Let's try creating a tensor and putting it on the GPU (if it's available).
+下面创建一个张量并尝试放到 GPU（若可用）。
 
 
 ```python
@@ -1917,24 +1917,24 @@ tensor_on_gpu
 
 
 
-If you have a GPU available, the above code will output something like:
+如果可用 GPU，上面输出会类似：
 
 ```
 tensor([1, 2, 3]) cpu
 tensor([1, 2, 3], device='cuda:0')
 ```
 
-Notice the second tensor has `device='cuda:0'`, this means it's stored on the 0th GPU available (GPUs are 0 indexed, if two GPUs were available, they'd be `'cuda:0'` and `'cuda:1'` respectively, up to `'cuda:n'`).
+注意第二个张量的 `device='cuda:0'`，表示它在第 0 块 GPU（索引从 0 开始）。
 
 
 
-### 4. Moving tensors back to the CPU
+### 4. 把张量移回 CPU
 
-What if we wanted to move the tensor back to CPU?
+如果我们要把张量移回 CPU 呢？
 
-For example, you'll want to do this if you want to interact with your tensors with NumPy (NumPy does not leverage the GPU).
+比如你要和 NumPy 交互时就需要这么做（NumPy 不直接用 GPU）。
 
-Let's try using the [`torch.Tensor.numpy()`](https://pytorch.org/docs/stable/generated/torch.Tensor.numpy.html) method on our `tensor_on_gpu`.
+先尝试对 `tensor_on_gpu` 直接调用 [`torch.Tensor.numpy()`](https://pytorch.org/docs/stable/generated/torch.Tensor.numpy.html)。
 
 
 ```python
@@ -1949,9 +1949,9 @@ tensor_on_gpu.numpy()
 
 
 
-Instead, to get a tensor back to CPU and usable with NumPy we can use [`Tensor.cpu()`](https://pytorch.org/docs/stable/generated/torch.Tensor.cpu.html).
+更稳妥的方式是先调用 [`Tensor.cpu()`](https://pytorch.org/docs/stable/generated/torch.Tensor.cpu.html) 回到 CPU。
 
-This copies the tensor to CPU memory so it's usable with CPUs.
+这会把张量复制到 CPU 内存，从而可被 NumPy 使用。
 
 
 ```python
@@ -1967,7 +1967,7 @@ tensor_back_on_cpu
 
 
 
-The above returns a copy of the GPU tensor in CPU memory so the original tensor is still on GPU.
+这一步返回的是 CPU 副本，原始 GPU 张量仍保留在原设备上。
 
 
 ```python
@@ -1981,29 +1981,29 @@ tensor_on_gpu
 
 
 
-## Exercises
+## 练习
 
-All of the exercises are focused on practicing the code above.
+以下练习都围绕上文代码展开。
 
-You should be able to complete them by referencing each section or by following the resource(s) linked.
+你可以通过回看对应章节或参考链接完成它们。
 
-**Resources:**
+**资源：**
 
-* [Exercise template notebook for 00](https://github.com/mrdbourke/pytorch-deep-learning/blob/main/extras/exercises/00_pytorch_fundamentals_exercises.ipynb).
-* [Example solutions notebook for 00](https://github.com/mrdbourke/pytorch-deep-learning/blob/main/extras/solutions/00_pytorch_fundamentals_exercise_solutions.ipynb) (try the exercises *before* looking at this).
+* [00 章练习模板 notebook](https://github.com/mrdbourke/pytorch-deep-learning/blob/main/extras/exercises/00_pytorch_fundamentals_exercises.ipynb)。
+* [00 章参考解答 notebook](https://github.com/mrdbourke/pytorch-deep-learning/blob/main/extras/solutions/00_pytorch_fundamentals_exercise_solutions.ipynb)（建议先独立完成再看）。
 
-1. Documentation reading - A big part of deep learning (and learning to code in general) is getting familiar with the documentation of a certain framework you're using. We'll be using the PyTorch documentation a lot throughout the rest of this course. So I'd recommend spending 10-minutes reading the following (it's okay if you don't get some things for now, the focus is not yet full understanding, it's awareness). See the documentation on [`torch.Tensor`](https://pytorch.org/docs/stable/tensors.html#torch-tensor) and for [`torch.cuda`](https://pytorch.org/docs/master/notes/cuda.html#cuda-semantics).
-2. Create a random tensor with shape `(7, 7)`.
-3. Perform a matrix multiplication on the tensor from 2 with another random tensor with shape `(1, 7)` (hint: you may have to transpose the second tensor).
-4. Set the random seed to `0` and do exercises 2 & 3 over again.
-5. Speaking of random seeds, we saw how to set it with `torch.manual_seed()` but is there a GPU equivalent? (hint: you'll need to look into the documentation for `torch.cuda` for this one). If there is, set the GPU random seed to `1234`.
-6. Create two random tensors of shape `(2, 3)` and send them both to the GPU (you'll need access to a GPU for this). Set `torch.manual_seed(1234)` when creating the tensors (this doesn't have to be the GPU random seed).
-7. Perform a matrix multiplication on the tensors you created in 6 (again, you may have to adjust the shapes of one of the tensors).
-8. Find the maximum and minimum values of the output of 7.
-9. Find the maximum and minimum index values of the output of 7.
-10. Make a random tensor with shape `(1, 1, 1, 10)` and then create a new tensor with all the `1` dimensions removed to be left with a tensor of shape `(10)`. Set the seed to `7` when you create it and print out the first tensor and it's shape as well as the second tensor and it's shape.
+1. 文档阅读：学习深度学习（以及编程）很重要的一点是熟悉框架文档。课程后续会频繁使用 PyTorch 文档。建议先花 10 分钟阅读 [`torch.Tensor`](https://pytorch.org/docs/stable/tensors.html#torch-tensor) 与 [`torch.cuda`](https://pytorch.org/docs/master/notes/cuda.html#cuda-semantics)（暂时看不懂也没关系，先建立认识）。
+2. 创建一个形状为 `(7, 7)` 的随机张量。
+3. 用第 2 题的张量与另一个形状为 `(1, 7)` 的随机张量做矩阵乘法（提示：你可能需要转置第二个张量）。
+4. 将随机种子设为 `0`，重做第 2 和第 3 题。
+5. 我们看到了 `torch.manual_seed()`，那 GPU 有没有对应方法？（提示：查 `torch.cuda` 文档）如果有，把 GPU 随机种子设为 `1234`。
+6. 创建两个形状为 `(2, 3)` 的随机张量并都发送到 GPU（需要可用 GPU）。创建时设置 `torch.manual_seed(1234)`（不必是 GPU 专用随机种子）。
+7. 对第 6 题的两个张量做矩阵乘法（同样可能要调整其中一个张量的形状）。
+8. 找出第 7 题输出的最大值和最小值。
+9. 找出第 7 题输出中最大值和最小值对应的索引。
+10. 创建形状为 `(1, 1, 1, 10)` 的随机张量，再去掉所有值为 `1` 的维度，得到形状 `(10)` 的新张量。创建时将 seed 设为 `7`，并打印两个张量及其形状。
 
-## Extra-curriculum
+## 课外延伸
 
-* Spend 1-hour going through the [PyTorch basics tutorial](https://pytorch.org/tutorials/beginner/basics/intro.html) (I'd recommend the [Quickstart](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html) and [Tensors](https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html) sections).
-* To learn more on how a tensor can represent data, see this video: [What's a tensor?](https://youtu.be/f5liqUk0ZTw)
+* 花 1 小时学习 [PyTorch basics tutorial](https://pytorch.org/tutorials/beginner/basics/intro.html)（推荐先看 [Quickstart](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html) 和 [Tensors](https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html)）。
+* 想更直观理解“张量如何表示数据”，可看这个视频：[What's a tensor?](https://youtu.be/f5liqUk0ZTw)
