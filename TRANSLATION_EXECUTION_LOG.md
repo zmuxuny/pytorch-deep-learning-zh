@@ -294,3 +294,19 @@
 		- `a40ed91` 仅包含 `01_pytorch_workflow.ipynb`
 		- `72a61f1` 仅包含 `02_pytorch_classification.ipynb`
 - 下一轮起点：若继续主线“正文全中文”口径，可只剩公式/数学表达保留项与 docs 同步阶段决策。
+
+## 24) 本轮记录（续）
+- 日期：2026-04-08
+- 本轮目标：进入 docs 同步第一批，先对齐 01/02 与根目录已完成的收尾修复。
+- 本轮实际改动文件：docs/01_pytorch_workflow.ipynb、docs/02_pytorch_classification.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/01：训练步骤详情中的两条纯代码片段行已补充中文引导词（例如）。
+	- docs/02：顶部导航文案（View Source/Slides）已本地化；训练步骤示例括号缺失已修复；可视化口号已本地化。
+- 扩展状态（docs/extras/video）：处于 docs 同步阶段（本轮仅处理 docs/01、docs/02）。
+- 验收结果：
+	- docs/01 与 docs/02 Notebook 错误检查：No errors found。
+	- 目标残留复扫（本轮目标项）：`View Source Code`、`View Slides`、`Visualize, visualize, visualize!`、`loss = loss_fn(y_pred, y_train</code>` 均已清理。
+	- 原子提交范围校验：
+		- `4d80b40` 仅包含 `docs/01_pytorch_workflow.ipynb`
+		- `ec2328b` 仅包含 `docs/02_pytorch_classification.ipynb`
+- 下一轮起点：继续 docs 同步第二批（建议按 08/09 或 03/04 继续单文件原子推进）。
