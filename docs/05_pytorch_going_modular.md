@@ -59,7 +59,7 @@ Notebook 非常适合快速迭代探索和实验。
 
 当某些方案验证可行后，再把最有价值的代码迁移到 Python 脚本中。
 
-<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-my-workflow-for-experimenting.png" alt="一种可参考的机器学习编码流程：先在 Jupyter/Colab 验证，再迁移到 Python 脚本。" width=1000/>
+<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-my-workflow-for-experimenting.png" alt="一种可能的机器学习代码工作流：先在 Jupyter 或 Google Colab notebook 中实验，验证可行后再迁移到 Python 脚本。" width=1000/>
 
 *机器学习代码的工作流没有唯一答案。有人喜欢先写脚本，也有人（比如我）更喜欢先用 notebook，再迁移到脚本。*
 
@@ -73,7 +73,7 @@ Notebook 非常适合快速迭代探索和实验。
 python train.py --model MODEL_NAME --batch_size BATCH_SIZE --lr LEARNING_RATE --num_epochs NUM_EPOCHS
 ```
 
-<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-python-train-command-line-annotated.png" alt="使用不同超参数训练 PyTorch 模型的命令行示例" width=1000/> 
+<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-python-train-command-line-annotated.png" alt="使用不同超参数在命令行调用训练 PyTorch 模型。" width=1000/> 
 
 *在命令行运行 PyTorch 的 `train.py`，并传入不同的超参数设置。*
 
@@ -93,7 +93,7 @@ python train.py --model tinyvgg --batch_size 32 --lr 0.001 --num_epochs 10
 
 PyTorch 官方关于训练 SOTA 计算机视觉模型的博客也采用了这种风格。
 
-<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-training-sota-recipe.png" alt="训练先进计算机视觉模型的 PyTorch 训练脚本配方" width=800/>
+<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-training-sota-recipe.png" alt="用于训练 SOTA 计算机视觉模型的 PyTorch 训练脚本方案。" width=800/>
 
 *使用 8 张 GPU 训练 SOTA 视觉模型的 PyTorch 命令行训练方案。来源：[PyTorch blog](https://pytorch.org/blog/how-to-train-state-of-the-art-models-using-torchvision-latest-primitives/#the-training-recipe)。*
 
@@ -116,7 +116,7 @@ PyTorch 官方关于训练 SOTA 计算机视觉模型的博客也采用了这种
 
 把两个 notebook 并排运行，你会清楚看到它们的不同，而关键学习点就藏在这些差异里。
 
-<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-notebook-cell-mode-vs-script-mode.png" alt="单元模式 notebook 与脚本模式 notebook 的运行对比" width=1000/>
+<img src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/05-notebook-cell-mode-vs-script-mode.png" alt="并排运行 cell mode notebook 与 script mode notebook。" width=1000/>
 
 *把第 05 节两个 notebook 并排运行。你会发现 **script mode notebook 额外多了一些代码单元**，用于把 cell mode 中的代码转换成 Python 脚本。*
 
