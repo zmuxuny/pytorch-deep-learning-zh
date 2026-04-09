@@ -410,3 +410,16 @@
 		- `672335c` 仅包含 `docs/pytorch_most_common_errors.ipynb`
 		- `8433b98` 仅包含 `TRANSLATION_EXECUTION_LOG.md`（记录首个新增 docs 文件收敛）
 - 下一轮起点：从 `docs/pytorch_2_intro.ipynb` 正文前 10-15 个 markdown 单元开始分批本地化，再同步 `docs/pytorch_most_common_errors.ipynb` 对应段落。
+
+## 30) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：按既定计划继续 `docs/pytorch_2_intro.ipynb` 正文分批本地化，先处理前段 5-6 个 markdown 单元（intro/speedups/overview）。
+- 本轮实际改动文件：docs/pytorch_2_intro.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_2_intro：已完成正文首批翻译（`30-second intro`、`Quick code examples`、`Speedups`、`3-minute overview` 等前段内容）。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（本轮仅推进 `docs/pytorch_2_intro` 正文首批）。
+- 验收结果：
+	- docs/pytorch_2_intro Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=232`（较上一轮 `markdown=252` 继续下降）。
+	- 原子提交范围校验：`6436f1e` 仅包含 `docs/pytorch_2_intro.ipynb`。
+- 下一轮起点：继续 `docs/pytorch_2_intro.ipynb` 正文下一批 markdown 单元（从 `Fusion` 小节开始），完成后再推进 `docs/pytorch_most_common_errors.ipynb` 正文首批。
