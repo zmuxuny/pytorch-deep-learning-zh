@@ -569,3 +569,22 @@
 	- 严格残留复扫：`code_comment=84`，`markdown=0`（正文已清零，剩余为代码注释长尾）。
 	- 原子提交范围校验：`d088353` 仅包含 `extras/pytorch_most_common_errors.ipynb`。
 - 下一轮起点：继续 extras 两个 notebook 的代码注释收敛（优先 `extras/pytorch_2_intro.ipynb`）。
+
+## 42) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：完成 extras 两个同名 notebook 的代码注释收敛，清理 code_comment 长尾。
+- 本轮实际改动文件：extras/pytorch_2_intro.ipynb、extras/pytorch_most_common_errors.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（extras 同步）：
+	- extras/pytorch_2_intro：已同步 `docs/pytorch_2_intro` 的 code 单元 source，代码注释口径与 docs 对齐。
+	- extras/pytorch_most_common_errors：已同步 `docs/pytorch_most_common_errors` 的 code 单元 source，代码注释口径与 docs 对齐。
+- 扩展状态（docs/extras/video）：extras 阶段在两本高复用 notebook 上完成“正文 + 代码注释”双层收敛。
+- 验收结果：
+	- extras/pytorch_2_intro Notebook 错误检查：No errors found。
+	- extras/pytorch_most_common_errors Notebook 错误检查：No errors found。
+	- 严格残留复扫：
+		- extras/pytorch_2_intro：`code_comment=0`，`markdown=0`
+		- extras/pytorch_most_common_errors：`code_comment=0`，`markdown=0`
+	- 原子提交范围校验：
+		- `49703b6` 仅包含 `extras/pytorch_2_intro.ipynb`
+		- `cdc7cfa` 仅包含 `extras/pytorch_most_common_errors.ipynb`
+- 下一轮起点：继续 extras 其他 notebook 的正文残留收敛（按残留优先级与单文件原子提交策略推进）。
