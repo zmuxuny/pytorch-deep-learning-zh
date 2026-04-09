@@ -475,3 +475,16 @@
 	- 严格残留复扫：`code_comment=0`，`markdown=2`（仅剩少量保留项）。
 	- 原子提交范围校验：`ba6ee3f` 仅包含 `docs/pytorch_2_intro.ipynb`。
 - 下一轮起点：切入 `docs/pytorch_most_common_errors.ipynb` 正文首批本地化，并沿用单文件原子提交与日志独立提交策略。
+
+## 35) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：切入 `docs/pytorch_most_common_errors.ipynb` 正文首批本地化（优先 1.1-1.5 形状错误主线）。
+- 本轮实际改动文件：docs/pytorch_most_common_errors.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_most_common_errors：已完成 1.1 矩阵乘法形状错误、1.2 神经网络形状错误概览、1.3 数据集下载、1.4 错误模型对照表、1.5 输入层形状错误等关键正文段落本地化。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（转入新增错误排查页面正文收敛）。
+- 验收结果：
+	- docs/pytorch_most_common_errors Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=137`（较上一轮 `markdown=213` 明显下降）。
+	- 原子提交范围校验：`d4d034a` 仅包含 `docs/pytorch_most_common_errors.ipynb`。
+- 下一轮起点：继续 `docs/pytorch_most_common_errors.ipynb` 的 1.6/2.x/3.x 正文分批本地化，保持单文件原子提交与日志独立提交。
