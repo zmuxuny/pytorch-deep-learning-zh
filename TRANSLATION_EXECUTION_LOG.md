@@ -488,3 +488,16 @@
 	- 严格残留复扫：`code_comment=0`，`markdown=137`（较上一轮 `markdown=213` 明显下降）。
 	- 原子提交范围校验：`d4d034a` 仅包含 `docs/pytorch_most_common_errors.ipynb`。
 - 下一轮起点：继续 `docs/pytorch_most_common_errors.ipynb` 的 1.6/2.x/3.x 正文分批本地化，保持单文件原子提交与日志独立提交。
+
+## 36) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：继续 `docs/pytorch_most_common_errors.ipynb` 正文第二批本地化，推进 1.6/1.7 与 2.1-2.5 设备错误主线。
+- 本轮实际改动文件：docs/pytorch_most_common_errors.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_most_common_errors：已完成隐藏层形状不匹配与 lazy layers 说明（1.6/1.7），以及设备错误章节中设备设定、CPU/GPU 训练与修复流程（2.1-2.5）本地化。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（新增错误排查页面持续收敛）。
+- 验收结果：
+	- docs/pytorch_most_common_errors Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=76`（较上一批 `markdown=137` 继续下降）。
+	- 原子提交范围校验：`9a1ed41` 仅包含 `docs/pytorch_most_common_errors.ipynb`。
+- 下一轮起点：继续 `docs/pytorch_most_common_errors.ipynb` 的 2.6/3.x/结尾汇总段落本地化并收尾。
