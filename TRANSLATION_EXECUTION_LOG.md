@@ -543,3 +543,16 @@
 		- docs/pytorch_most_common_errors：`code_comment=0`，`markdown=0`
 	- 原子提交范围校验：`b466bd3` 仅包含 `docs/pytorch_2_intro.ipynb`。
 - 下一轮起点：切换到下一批内容（优先 `extras/pytorch_2_intro.ipynb`）做首批正文分段本地化，继续单文件原子提交与日志独立提交。
+
+## 40) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：切换到 `extras/pytorch_2_intro.ipynb`，先同步已收敛的中文正文并完成首轮验收。
+- 本轮实际改动文件：extras/pytorch_2_intro.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（extras 同步）：
+	- extras/pytorch_2_intro：已按单元级同步 `docs/pytorch_2_intro` 的中文 markdown 正文，章节叙述全量对齐。
+- 扩展状态（docs/extras/video）：从 docs 阶段切入 extras 阶段，优先处理与 docs 同名的高复用 notebook。
+- 验收结果：
+	- extras/pytorch_2_intro Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=93`，`markdown=0`（正文已清零，剩余为代码注释长尾）。
+	- 原子提交范围校验：`17295b2` 仅包含 `extras/pytorch_2_intro.ipynb`。
+- 下一轮起点：继续 `extras/pytorch_most_common_errors.ipynb`，复用同策略先收敛 markdown 正文，再处理代码注释长尾。
