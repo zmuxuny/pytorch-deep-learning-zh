@@ -514,3 +514,16 @@
 	- 严格残留复扫：`code_comment=0`，`markdown=17`（较上一批 `markdown=76` 显著下降）。
 	- 原子提交范围校验：`d634c20` 仅包含 `docs/pytorch_most_common_errors.ipynb`。
 - 下一轮起点：处理 `docs/pytorch_most_common_errors.ipynb` 剩余长尾英文行（提示语/术语行）并做最终收尾验收。
+
+## 38) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：清理 `docs/pytorch_most_common_errors.ipynb` 的剩余英文长尾行并完成收尾验收。
+- 本轮实际改动文件：docs/pytorch_most_common_errors.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_most_common_errors：已完成开篇总述与尾项提示行本地化，补齐最后一处纯英文报错行说明。
+- 扩展状态（docs/extras/video）：新增错误排查页面已完成本轮目标收尾。
+- 验收结果：
+	- docs/pytorch_most_common_errors Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=0`（达到当前口径清零）。
+	- 原子提交范围校验：`4df9d05` 仅包含 `docs/pytorch_most_common_errors.ipynb`。
+- 下一轮起点：回到 docs 新增页面总体验收（`docs/pytorch_2_intro.ipynb` + `docs/pytorch_most_common_errors.ipynb`），确认保留项口径后决定是否切换到下一目录。
