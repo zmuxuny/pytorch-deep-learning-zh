@@ -622,3 +622,16 @@
 		- `93fbc1c` 仅包含 `extras/04_custom_data_creation.ipynb`
 		- `eb2bdb4` 仅包含 `extras/resize_images.ipynb`
 - 下一轮起点：继续推进 `extras/exercises` 与 `extras/solutions` 的分批收敛（保持单文件原子提交与日志独立提交）。
+
+## 45) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：推进 `extras/exercises` 目录，完成 `04_pytorch_custom_datasets_exercises.ipynb` 残留收敛。
+- 本轮实际改动文件：extras/exercises/04_pytorch_custom_datasets_exercises.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（extras/exercises）：
+	- exercises/04：已完成 Colab 入口 alt 文案与训练/测试循环注释等英文残留本地化。
+- 扩展状态（docs/extras/video）：已从 extras 顶层推进到 exercises 子目录。
+- 验收结果：
+	- extras/exercises/04_pytorch_custom_datasets_exercises.ipynb Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=0`。
+	- 原子提交范围校验：`780604a` 仅包含 `extras/exercises/04_pytorch_custom_datasets_exercises.ipynb`。
+- 下一轮起点：继续 exercises 目录高残留项（优先 `06_pytorch_transfer_learning_exercises.ipynb`）。
