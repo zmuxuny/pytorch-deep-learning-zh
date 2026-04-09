@@ -527,3 +527,19 @@
 	- 严格残留复扫：`code_comment=0`，`markdown=0`（达到当前口径清零）。
 	- 原子提交范围校验：`4df9d05` 仅包含 `docs/pytorch_most_common_errors.ipynb`。
 - 下一轮起点：回到 docs 新增页面总体验收（`docs/pytorch_2_intro.ipynb` + `docs/pytorch_most_common_errors.ipynb`），确认保留项口径后决定是否切换到下一目录。
+
+## 39) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：完成 `docs/pytorch_2_intro.ipynb` 资源段英文长尾收尾，并做新增 docs 双文件总体验收。
+- 本轮实际改动文件：docs/pytorch_2_intro.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_2_intro：已完成资源段两条长尾英文行本地化（发布博文/默认设备文档行）。
+	- docs/pytorch_most_common_errors：保持收尾清零状态。
+- 扩展状态（docs/extras/video）：新增 docs 两个页面已完成当前口径收敛，可转入下一目录目标。
+- 验收结果：
+	- docs/pytorch_2_intro Notebook 错误检查：No errors found。
+	- 严格残留复扫：
+		- docs/pytorch_2_intro：`code_comment=0`，`markdown=0`
+		- docs/pytorch_most_common_errors：`code_comment=0`，`markdown=0`
+	- 原子提交范围校验：`b466bd3` 仅包含 `docs/pytorch_2_intro.ipynb`。
+- 下一轮起点：切换到下一批内容（优先 `extras/pytorch_2_intro.ipynb`）做首批正文分段本地化，继续单文件原子提交与日志独立提交。
