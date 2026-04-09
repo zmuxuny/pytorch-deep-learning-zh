@@ -462,3 +462,16 @@
 	- 严格残留复扫：`code_comment=0`，`markdown=56`（较上一批 `markdown=103` 继续下降）。
 	- 原子提交范围校验：`b35297d` 仅包含 `docs/pytorch_2_intro.ipynb`。
 - 下一轮起点：继续 `docs/pytorch_2_intro.ipynb` 的 4.x/5.x/6.x 收尾段，再转入 `docs/pytorch_most_common_errors.ipynb` 正文首批。
+
+## 34) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：完成 `docs/pytorch_2_intro.ipynb` 后半段（4.x/5.x/6.x）收尾本地化。
+- 本轮实际改动文件：docs/pytorch_2_intro.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_2_intro：已完成多次运行实验（4.1/4.2/4.3/4.4）、改进扩展建议（5）与学习资源（6）段落本地化。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（`docs/pytorch_2_intro` 主体已接近收尾）。
+- 验收结果：
+	- docs/pytorch_2_intro Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=2`（仅剩少量保留项）。
+	- 原子提交范围校验：`ba6ee3f` 仅包含 `docs/pytorch_2_intro.ipynb`。
+- 下一轮起点：切入 `docs/pytorch_most_common_errors.ipynb` 正文首批本地化，并沿用单文件原子提交与日志独立提交策略。
