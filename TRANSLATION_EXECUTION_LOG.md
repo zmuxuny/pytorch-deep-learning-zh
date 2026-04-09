@@ -391,3 +391,22 @@
 	- 主线 00-09 与根目录文件级比对通过。
 	- workflow 发布的 extras 页面文件级比对通过。
 - 下一轮起点：继续 extras 深度汉化（`extras/pytorch_2_intro.ipynb`、`extras/exercises/`、`extras/solutions/`），再进入 `video_notebooks/` 与剩余发布收尾。
+
+## 29) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：继续 docs 新增页面收敛，优先处理 `docs/pytorch_2_intro.ipynb` 与 `docs/pytorch_most_common_errors.ipynb` 的低风险项（导航文案 + 英文起始代码注释）。
+- 本轮实际改动文件：docs/pytorch_2_intro.ipynb、docs/pytorch_most_common_errors.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_2_intro：已新增并纳入版本管理；顶部 Colab/源码文案与标题本地化；英文起始代码注释清零。
+	- docs/pytorch_most_common_errors：已新增并纳入版本管理；顶部 Colab 文案与标题本地化；英文起始代码注释清零。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（本轮仅处理两份新增 docs notebook）。
+- 验收结果：
+	- 两文件 Notebook 错误检查：No errors found。
+	- 严格残留复扫：
+		- docs/pytorch_2_intro：`code_comment=0`，`markdown=252`（以英文正文段落为主，待后续分批收敛）
+		- docs/pytorch_most_common_errors：`code_comment=0`，`markdown=213`（以英文正文段落为主，待后续分批收敛）
+	- 原子提交范围校验：
+		- `cf190af` 仅包含 `docs/pytorch_2_intro.ipynb`
+		- `672335c` 仅包含 `docs/pytorch_most_common_errors.ipynb`
+		- `8433b98` 仅包含 `TRANSLATION_EXECUTION_LOG.md`（记录首个新增 docs 文件收敛）
+- 下一轮起点：从 `docs/pytorch_2_intro.ipynb` 正文前 10-15 个 markdown 单元开始分批本地化，再同步 `docs/pytorch_most_common_errors.ipynb` 对应段落。
