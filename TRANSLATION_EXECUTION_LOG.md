@@ -436,3 +436,16 @@
 	- 严格残留复扫：`code_comment=0`，`markdown=182`（较上一批 `markdown=232` 继续下降）。
 	- 原子提交范围校验：`3b58758` 仅包含 `docs/pytorch_2_intro.ipynb`。
 - 下一轮起点：继续 `docs/pytorch_2_intro.ipynb` 后续正文分批本地化（优先 1.x/2.x 小节说明），完成后转入 `docs/pytorch_most_common_errors.ipynb` 正文首批。
+
+## 32) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：继续 `docs/pytorch_2_intro.ipynb` 正文分批本地化，收敛 0/1/2 章节核心说明与中段机制段落。
+- 本轮实际改动文件：docs/pytorch_2_intro.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_2_intro：已完成 3-minute overview、Fusion、Graph capture、注意事项、实验总览，以及 0/1/1.1/2.1-2.5 关键说明段的本地化。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（本轮仍为单文件推进 `docs/pytorch_2_intro`）。
+- 验收结果：
+	- docs/pytorch_2_intro Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=103`（较上一批 `markdown=182` 显著下降）。
+	- 原子提交范围校验：`d2817fc` 仅包含 `docs/pytorch_2_intro.ipynb`。
+- 下一轮起点：继续 `docs/pytorch_2_intro.ipynb` 后续实验结果与资源段落分批本地化，随后切入 `docs/pytorch_most_common_errors.ipynb` 正文首批。
