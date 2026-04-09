@@ -588,3 +588,18 @@
 		- `49703b6` 仅包含 `extras/pytorch_2_intro.ipynb`
 		- `cdc7cfa` 仅包含 `extras/pytorch_most_common_errors.ipynb`
 - 下一轮起点：继续 extras 其他 notebook 的正文残留收敛（按残留优先级与单文件原子提交策略推进）。
+
+## 43) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：收敛 `extras/pytorch_cheatsheet.ipynb` 的正文与代码注释长尾。
+- 本轮实际改动文件：extras/pytorch_cheatsheet.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（extras 同步）：
+	- extras/pytorch_cheatsheet：已完成 markdown 正文本地化与 code 注释本地化，核心速查叙述与注释口径统一为中文。
+- 扩展状态（docs/extras/video）：extras 阶段继续推进，新增完成 `pytorch_cheatsheet` 全量收敛。
+- 验收结果：
+	- extras/pytorch_cheatsheet Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=0`。
+	- 原子提交范围校验：
+		- `e1ed912` 仅包含 `extras/pytorch_cheatsheet.ipynb`（正文收敛）
+		- `e87d71f` 仅包含 `extras/pytorch_cheatsheet.ipynb`（代码注释收敛）
+- 下一轮起点：继续处理 `extras/04_custom_data_creation.ipynb`（先 markdown，再 code_comment）。
