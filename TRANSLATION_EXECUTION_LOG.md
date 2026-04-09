@@ -603,3 +603,22 @@
 		- `e1ed912` 仅包含 `extras/pytorch_cheatsheet.ipynb`（正文收敛）
 		- `e87d71f` 仅包含 `extras/pytorch_cheatsheet.ipynb`（代码注释收敛）
 - 下一轮起点：继续处理 `extras/04_custom_data_creation.ipynb`（先 markdown，再 code_comment）。
+
+## 44) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：继续清理 extras 剩余 notebook 残留，完成 `04_custom_data_creation` 与 `resize_images` 收敛。
+- 本轮实际改动文件：extras/04_custom_data_creation.ipynb、extras/resize_images.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（extras 同步）：
+	- extras/04_custom_data_creation：已完成 markdown 正文与代码注释本地化，数据创建说明与注释口径统一为中文。
+	- extras/resize_images：已完成标题与代码注释本地化，残留清零。
+- 扩展状态（docs/extras/video）：extras 顶层 notebook 残留继续下降，已完成两本额外文件收敛。
+- 验收结果：
+	- extras/04_custom_data_creation Notebook 错误检查：No errors found。
+	- extras/resize_images Notebook 错误检查：No errors found。
+	- 严格残留复扫：
+		- extras/04_custom_data_creation：`code_comment=0`，`markdown=0`
+		- extras/resize_images：`code_comment=0`，`markdown=0`
+	- 原子提交范围校验：
+		- `93fbc1c` 仅包含 `extras/04_custom_data_creation.ipynb`
+		- `eb2bdb4` 仅包含 `extras/resize_images.ipynb`
+- 下一轮起点：继续推进 `extras/exercises` 与 `extras/solutions` 的分批收敛（保持单文件原子提交与日志独立提交）。
