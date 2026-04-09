@@ -423,3 +423,16 @@
 	- 严格残留复扫：`code_comment=0`，`markdown=232`（较上一轮 `markdown=252` 继续下降）。
 	- 原子提交范围校验：`6436f1e` 仅包含 `docs/pytorch_2_intro.ipynb`。
 - 下一轮起点：继续 `docs/pytorch_2_intro.ipynb` 正文下一批 markdown 单元（从 `Fusion` 小节开始），完成后再推进 `docs/pytorch_most_common_errors.ipynb` 正文首批。
+
+## 31) 本轮记录（续）
+- 日期：2026-04-09
+- 本轮目标：继续 `docs/pytorch_2_intro.ipynb` 正文第二批，处理 `Fusion`、`Graph capture`、注意事项与实验说明段。
+- 本轮实际改动文件：docs/pytorch_2_intro.ipynb、TRANSLATION_EXECUTION_LOG.md
+- 主线状态（docs 同步）：
+	- docs/pytorch_2_intro：已完成正文第二批翻译（融合/图捕获机制解释、限制说明、实验设计与环境准备引导）。
+- 扩展状态（docs/extras/video）：继续 docs 同步阶段（本轮继续单文件推进 `docs/pytorch_2_intro`）。
+- 验收结果：
+	- docs/pytorch_2_intro Notebook 错误检查：No errors found。
+	- 严格残留复扫：`code_comment=0`，`markdown=182`（较上一批 `markdown=232` 继续下降）。
+	- 原子提交范围校验：`3b58758` 仅包含 `docs/pytorch_2_intro.ipynb`。
+- 下一轮起点：继续 `docs/pytorch_2_intro.ipynb` 后续正文分批本地化（优先 1.x/2.x 小节说明），完成后转入 `docs/pytorch_most_common_errors.ipynb` 正文首批。
